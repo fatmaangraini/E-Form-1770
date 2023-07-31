@@ -1,0 +1,341 @@
+body {
+  font-family: arial;
+  background-color: #ccc;
+  padding: 1% 10% 1% 10%;
+}
+
+.container-fluid {
+  width: 700px;
+  background-color: #fff;
+  position: static;
+}
+
+.row {
+  box-sizing: border-box;
+}
+
+.header {
+  border-bottom: 2px solid black;
+}
+
+.bag1 {
+  text-align: center;
+  padding: 30px 0px 10px 10px;
+  border-right: 2px solid black;
+}
+
+.col-2 h5,
+h1 {
+  font-weight: bold;
+}
+
+.col-2 h6 {
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -20px
+}
+
+.col-2 h1 {
+  margin-top: 20px;
+}
+
+.col-2 p {
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 30px;
+
+}
+
+.col-6 {
+  border-right: 2px solid black;
+
+}
+
+.col-6 h5 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.col-6 p {
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+
+.col-6 span {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.col-4 {
+  padding: 10px;
+}
+
+.col-4 a {
+  font-size: 12px;
+  width: 120px;
+  height: 30px;
+  margin: 5px 15px;
+}
+
+.tahun-pelaporan {
+  padding: 4px 25px;
+}
+
+.tahun-pajak {
+  border: 1px solid black;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.bulan-pelaporan {
+  padding-left: 30px;
+}
+
+.bulan-pajak {
+  border: 1px solid black;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  padding: 1px 20px;
+
+}
+
+.sd {
+  font-size: 14px;
+  text-align: center;
+  padding: 14px;
+  padding-left: 20px;
+
+}
+
+.form-check {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.form-check label {
+  font-size: 13px;
+}
+
+.form-pembetulan {
+  background-color: #F0E68C;
+}
+
+.cek-pembetulan {
+  width: 20px;
+  height: 20px;
+  border: 1px solid;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.col-9 {
+  font-size: 11px;
+  text-align: center;
+}
+
+b {
+  font-size: 11px;
+}
+
+.data-pengguna {
+  border: 2px solid black;
+  background-color: #F0E68C;
+  height: 80px;
+  padding: 8px 10px 4px 10px;
+}
+
+.form-label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.data-pengguna .form-control {
+  border: 1px solid black;
+  border-radius: 1px;
+  height: 30px;
+}
+
+/* Formulir-I Hal 1 */
+.audit {
+  border: 1px solid black;
+  height: auto
+}
+
+.audit label {
+  font-size: 12px;
+  margin-left: 1px
+}
+
+.audit .form-check {
+  display: inline-block;
+  margin-left: 30px
+}
+
+.audit .form-check-label {
+  font-size: 14px;
+}
+
+#eformspt {
+  display: none;
+}
+
+.opiniakuntan label {
+  font-size: 14px;
+  margin-left: 5px
+}
+
+.opiniakuntan select {
+  height: 32px;
+  border: 1px solid black;
+  font-size: 12px;
+}
+
+.identitasAudit label {
+  font-size: 12px;
+  margin-left: 5px
+}
+
+.identitasAudit input {
+  border: 1px solid black;
+  height: 30px;
+  border-radius: 1px;
+  text-transform: uppercase
+}
+
+.identitasAudit2 label {
+  font-size: 12px;
+  margin-left: 5px
+}
+
+.identitasAudit2 input {
+  border: 1px solid black;
+  height: 30px;
+  border-radius: 1px;
+  text-transform: uppercase
+}
+
+.th1 {
+  width: 3%;
+  border: 1px solid black;
+  border-bottom: 0;
+}
+
+.th2 {
+  width: 72%;
+  font-size: 12px;
+  border: 1px solid black;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.th3 {
+  width: 5%;
+  border: 0;
+  border-top: 1px solid black;
+}
+
+.th4 {
+  width: 20%;
+  font-size: 12px;
+  text-align: center;
+  border: 1px solid black;
+  border-left: 0;
+}
+
+.td1 {
+  border: 1px solid black;
+  border-top: 0px;
+  border-bottom: 0px;
+}
+
+.td2 span {
+  border: 0;
+  margin-left: 5px;
+  font-size: 12px
+}
+
+.td3 {
+  border-left: 1px dotted black;
+  border-top: 1px dotted black;
+  border-bottom: 0px;
+  font-size: 12px;
+  text-align: center
+}
+
+.td4 {
+  font-size: 12px;
+  text-align: center;
+  border: 1px solid black;
+  border-bottom: 0px
+}
+
+.td4hasil {
+  font-size: 12px;
+  text-align: center;
+  border: 1px solid black;
+  border-bottom: 0px;
+  background-color: #F0E68C
+}
+
+.td4 input {
+  width: 100%;
+  height: 30px;
+  border: 0px;
+  text-align: right;
+  font-size: 14px
+}
+
+.td4hasil input {
+  width: 100%;
+  height: 30px;
+  border: 0px;
+  background-color: #F0E68C;
+  text-align: right;
+  font-size: 14px
+}
+
+.th5 {
+  width: 3%;
+  font-size: 12px;
+  text-align: center;
+  border: 1px solid black
+}
+
+.th6 {
+  width: 72%;
+  font-size: 12px;
+  border: 1px solid black
+}
+
+.th7 {
+  border: 1px solid black;
+  font-size: 12px;
+  text-align: center
+}
+
+.th8 {
+  font-size: 12px;
+  text-align: center;
+  border: 1px solid black;
+  background-color: #F0E68C
+}
+
+.th8 input {
+  width: 100%;
+  height: 30px;
+  border: 0px;
+  background-color: #F0E68C;
+  text-align: right;
+  font-size: 14px
+}
+
+@media(min-width: 600px) {
+  .container-fluid {
+    width: 1000px;
+  }
+}

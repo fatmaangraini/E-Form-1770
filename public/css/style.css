@@ -1,0 +1,350 @@
+body {
+  font-family: arial;
+  background-color: #ccc;
+  padding: 1% 10% 1% 10%;
+}
+
+.container-fluid {
+  width: 700px;
+  background-color: #fff;
+  position: static;
+}
+
+.row {
+  box-sizing: border-box;
+}
+
+.header {
+  border-bottom: 2px solid black;
+}
+
+.bag1 {
+  text-align: center;
+  padding: 30px 0px 10px 10px;
+  border-right: 2px solid black;
+}
+
+.col-2 h5,
+h1 {
+  font-weight: bold;
+}
+
+.col-2 h6 {
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -20px
+}
+
+.col-2 h1 {
+  margin-top: 20px;
+}
+
+.col-2 p {
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 30px;
+
+}
+
+.col-6 {
+  border-right: 2px solid black;
+
+}
+
+.col-6 h5 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.col-6 p {
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+
+.col-6 span {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.col-4 {
+  padding: 10px;
+}
+
+.col-4 a {
+  font-size: 12px;
+  width: 120px;
+  height: 30px;
+  margin: 5px 15px;
+}
+
+.tahun-pelaporan {
+  padding: 4px 25px;
+}
+
+.tahun-pajak {
+  border: 1px solid black;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.bulan-pelaporan {
+  padding-left: 30px;
+}
+
+.bulan-pajak {
+  border: 1px solid black;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  padding: 1px 20px;
+
+}
+
+.sd {
+  font-size: 14px;
+  text-align: center;
+  padding: 14px;
+  padding-left: 20px;
+
+}
+
+.form-check {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.form-check label {
+  font-size: 13px;
+}
+
+.form-pembetulan {
+  background-color: #F0E68C;
+}
+
+.cek-pembetulan {
+  width: 20px;
+  height: 20px;
+  border: 1px solid;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.col-9 {
+  font-size: 11px;
+  text-align: center;
+}
+
+b {
+  font-size: 11px;
+}
+
+.data-pengguna {
+  border: 2px solid black;
+  background-color: #F0E68C;
+  height: 80px;
+  padding: 8px 10px 4px 10px;
+}
+
+.form-label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.data-pengguna .form-control {
+  border: 1px solid black;
+  border-radius: 1px;
+  height: 30px;
+}
+
+/* Formulir-IV */
+/* Data Harta */
+#A_TblHarta th,
+td {
+  border: 1px solid black;
+  font-size: 12px;
+  text-align: center;
+  height: 30px;
+  text-transform: uppercase;
+}
+
+#A_TblHarta td {
+  font-size: 14px;
+}
+
+#A_TblHarta input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  text-align: center;
+  text-transform: uppercase
+}
+
+#rowTemplateHart td {
+  border: 1px solid black;
+  font-size: 14px;
+  text-align: center;
+  height: 30px;
+  text-transform: uppercase;
+}
+
+#rowTemplateHarta input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  text-align: center;
+  text-transform: uppercase
+}
+
+select {
+  width: 100%;
+  font-size: 14px;
+  border: 1px solid white
+}
+
+.thJumlah {
+  border: 1px solid black;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  width: 670px;
+  height: 30px
+}
+
+.thJumlah2 {
+  border: 1px solid black;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  width: 400px;
+  background-color: #F0E68C
+}
+
+/* Data Utang */
+#B_TblUtang th,
+td {
+  border: 1px solid black;
+  font-size: 12px;
+  text-align: center;
+  height: 30px;
+  text-transform: uppercase;
+}
+
+#B_TblUtang td {
+  font-size: 14px;
+}
+
+#B_TblUtang input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  text-align: center;
+  text-transform: uppercase
+}
+
+#rowTemplateUtang td {
+  border: 1px solid black;
+  font-size: 14px;
+  text-align: center;
+  height: 30px;
+  text-transform: uppercase;
+}
+
+#rowTemplateUtang input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  text-align: center;
+  text-transform: uppercase
+}
+
+/* Data Keluarga */
+#C_TblKeluarga th,
+td {
+  border: 1px solid black;
+  font-size: 12px;
+  text-align: center;
+  height: 30px;
+  text-transform: uppercase;
+}
+
+#C_TblKeluarga td {
+  font-size: 14px;
+}
+
+#C_TblKeluarga input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  text-align: center;
+  text-transform: uppercase
+}
+
+#C_TblKeluarga td {
+  border: 1px solid black;
+  font-size: 14px;
+  text-align: center;
+  height: 30px;
+  text-transform: uppercase;
+}
+
+#C_TblKeluarga input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  text-align: center;
+  text-transform: uppercase
+}
+
+/* Formulir-III */
+#mytable th,
+td {
+  border: 1px solid black;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#mytable .left {
+  text-align: left;
+}
+
+#mytable input {
+  text-align: right;
+  border: 1px solid white;
+}
+
+/* Formulir-II */
+#BagianABupot th {
+  border: 1px solid black;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#BagianABupot input {
+  border: 1px solid white;
+  width: 100%;
+  text-transform: uppercase
+}
+
+#rowTemplateBagianABupot td {
+  border: 1px solid black;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#rowTemplateBagianABupot input {
+  border: 1px solid white;
+  width: 100%;
+  text-transform: uppercase
+}
+
+@media(min-width: 600px) {
+  .container-fluid {
+    width: 1000px;
+  }
+}
