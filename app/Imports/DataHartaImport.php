@@ -18,8 +18,28 @@ class DataHartaImport implements ToModel, WithStartRow
     public function model(array $row)
     {
         // Validasi kolom tidak boleh kosong
-        if (empty($row[0]) || empty($row[1]) || empty($row[2]) || empty($row[3]) || empty($row[4])) {
-            throw new \Exception('Data kolom tidak lengkap');
+        if (!empty($row[0]) && !empty($row[1]) && !empty($row[2]) && !empty($row[3]) && !empty($row[4])) {
+            // throw new \Exception('Data kolom tidak lengkap');
+            $lastform = FormulirIV::orderBy('id', 'desc')->first();
+            // return new DataHarta([
+            //     'formuliriv_id' => $lastform->id,
+            //     'kode_harta' => $row[0],
+            //     'nama_harta' => $row[1],
+            //     'tahun_perolehan' => $row[2],
+            //     'harta_perolehan' => $row[3],
+            //     'keterangan' => $row[4],
+            // ]);
+    
+            return DataHarta::updateOrCreate(
+                [
+                    'kode_harta' => $row[0],
+                    'tahun_perolehan' => $row[2],
+                    'formuliriv_id' => $lastform->id,
+                    'nama_harta' => $row[1],
+                    'harta_perolehan' => $row[3],
+                    'keterangan' => $row[4],
+                ]
+            );
         }
         // Memeriksa apakah data pada indeks 0 sesuai dengan opsi yang diinginkan
         // $allowedOptions = ['011', '012', '013'];
@@ -27,26 +47,7 @@ class DataHartaImport implements ToModel, WithStartRow
         //     throw new \Exception('Data pada indeks 0 tidak sesuai dengan opsi yang diinginkan');
         // }
 
-        $lastform = FormulirIV::orderBy('id', 'desc')->first();
-        // return new DataHarta([
-        //     'formuliriv_id' => $lastform->id,
-        //     'kode_harta' => $row[0],
-        //     'nama_harta' => $row[1],
-        //     'tahun_perolehan' => $row[2],
-        //     'harta_perolehan' => $row[3],
-        //     'keterangan' => $row[4],
-        // ]);
-
-        return DataHarta::updateOrCreate(
-            [
-                'kode_harta' => $row[0],
-                'tahun_perolehan' => $row[2],
-                'formuliriv_id' => $lastform->id,
-                'nama_harta' => $row[1],
-                'harta_perolehan' => $row[3],
-                'keterangan' => $row[4],
-            ]
-        );
+       
     }
     public function startRow(): int
     {

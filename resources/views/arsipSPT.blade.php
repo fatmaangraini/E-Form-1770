@@ -201,61 +201,73 @@
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <a style="border-radius: 2px 30px 2px 30px; height:40px; padding: 8px 20px; text-align: center;" href="{{url('/arsipSPT')}}" class="nav-link active" type="button">Arsip SPT</a>
             <a style="border-radius: 2px 30px 2px 30px; height:40px; padding: 8px 20px; text-align: center;" href="{{url('/buatSPT')}}" class="nav-link" type="button">Buat SPT</a>
-            <div align="right" class="col-sm-8">
-              <img src="{{ asset('form.jpg') }}" width="100px">
-            </div>
+            <img src="{{ asset('form.jpg') }}" style="height: 100%; margin-left: 670px; margin-top: -40px;">
+
           </div>
         </nav>
         <div class="card-box2">
           <div class="tab-content" id="nav-tabContent" style="margin-top: 20px;">
-            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-              <div class="table title_1">
-                <span>
-                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAABmJLR0QA/wD/AP+gvaeTAAABD0lEQVRIib3VMUvDQBjG8f+rCXUQFDengk6C0FGKq7tfQbr0q/gRRHBydHLXwSVbp3ZydHBx0E2qto9DFOS8nvcm1AeyvJf7vZccucASY2FB0hpwDGwk5s3M7MLdTdK5/s6rpANJuylrJVLbz1zHNnArqevBPekCd4saNMVL4Am4B2bAmaT18KbYhlZAP6PBzdf1nUczu0zOkFRlbGgsVWi1fefJFImxB+AjqG0Bm23xKXBKvVk/0wdO2uIdYMjvlQOMIkbPg78BVwvwmLHnwUvgyIGXHvyd+vFz8UMPXgA7DnzVg8+BZwc+9+AFMMiAk1nqF/rv+KShNQ4LsSO3Q/0PzT5DgBfg2symDRfmzydLjp+KLkhQbQAAAABJRU5ErkJggg==">
-                  Daftar SPT
-                </span>
+            <div class="row">
+              <div class="col-2">
+                <div class="card border-light mb-4" style="max-width: 18rem;">
+                  <div class="card-header bg-warning text-white" style="font-weight: bold; border-radius: 8px 8px 0px 0px">Dokumen Import</div>
+                  <div class="card-body text-dark">
+                    <p class="card-text" style="font-size: 14px;">Untuk format csv yang diupload Anda dapat mengunduhnya <a href="{{url('/Dokumen_Import_File.zip')}}" class="link-primary">disini</a></p>
+                  </div>
+                </div>
               </div>
-              <div style="padding: 0px 20px ;">
-                <table id="TabelArsipSPT" class="table w-100 table-bordered table-hover">
-                  <div style="padding: 10px;"></div>
-                  <thead>
-                    <tr>
-                      <th>N0</th>
-                      <th>JENIS SPT</th>
-                      <th>TAHUN/MASA PAJAK</th>
-                      <th>PEMBETULAN KE</th>
-                      <th>STATUS</th>
-                      <th>JUMLAH</th>
-                      <th>SUMBER</th>
-                      <th>AKSI</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php $i = 0; ?>
-                    @foreach ($form as $row)
-                    <tr>
-                      <td scope="row">{{ $i+=1 }}</td>
-                      <td>SPT 1770</td>
-                      <td>{{ $row['tahun'] }}/01-12</td>
-                      <td>{{ $row['pembetulan']}}</td>
-                      <td>{{ $row['status']}}</td>
-                      <td>{{ $row['jumlah'] ?? 0}}</td>
-                      <td>E-Form 1770</td>
-                      <td><a class="btn <?php if($row['cek_submit']) { ?>disabled-link <?php } ?>" href="formulir-IV/{{ $row['id']}}" <?php if($row['cek_submit']) { ?>disabled <?php } ?>>
-                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAoElEQVR4nNXTSwpBYRgG4GemmBpZgg3YhEvZgV1wnIlcFmBkI0oxoOzBLgyRCSmDf+B0Lije+gbf5Onv7/345UQ4ZphNGrTFLeOUPwlV34WGqOOCUVEowhRLdDEvAkWYBfvL16RBMcbBvkMlLxRjkhVJghboBfsabZTyQi10sAqQU94endHEHrUAyV3IAxroP8/i+q1mS8og49E+/uoPcgezcIvoozDVWgAAAABJRU5ErkJggg==">
-
-                        </a>
-                        <a class="btn" href="formulir_print/{{ $row['id']}}?download=pdf">
-                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAmUlEQVR4nO3UPwrCMBiH4Udw092D9AKexr2DeAUnz+BFlIKbCnoBcfUUrRQqFGmaturmCz/Iny9vQgLhR8yQYhVJWtUGOaPomGObKG9YsMO+YbysDdK08wXXwFwvUdGSv8j37+iBDdZv6S1KMMeilmSIaIRbrZ9hMkRUcq/aB0xFyCOiLHaSF6cW0barpKT8GpaB1xl3lXzEE0Q8l4vjjj5xAAAAAElFTkSuQmCC">
-                        </a>
-                      </td>
-                    </tr>
-                    @endforeach
-                  </tbody>
-                </table>
+              <div class="col-10">
+              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="table title_1">
+                  <span>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAABmJLR0QA/wD/AP+gvaeTAAABD0lEQVRIib3VMUvDQBjG8f+rCXUQFDengk6C0FGKq7tfQbr0q/gRRHBydHLXwSVbp3ZydHBx0E2qto9DFOS8nvcm1AeyvJf7vZccucASY2FB0hpwDGwk5s3M7MLdTdK5/s6rpANJuylrJVLbz1zHNnArqevBPekCd4saNMVL4Am4B2bAmaT18KbYhlZAP6PBzdf1nUczu0zOkFRlbGgsVWi1fefJFImxB+AjqG0Bm23xKXBKvVk/0wdO2uIdYMjvlQOMIkbPg78BVwvwmLHnwUvgyIGXHvyd+vFz8UMPXgA7DnzVg8+BZwc+9+AFMMiAk1nqF/rv+KShNQ4LsSO3Q/0PzT5DgBfg2symDRfmzydLjp+KLkhQbQAAAABJRU5ErkJggg==">
+                    Daftar SPT
+                  </span>
+                </div>
+                <div style="padding: 0px 20px ;">
+                  <table id="TabelArsipSPT" class="table w-100 table-bordered table-hover">
+                    <div style="padding: 10px;"></div>
+                    <thead>
+                      <tr>
+                        <th>N0</th>
+                        <th>JENIS SPT</th>
+                        <th>TAHUN/MASA PAJAK</th>
+                        <th>PEMBETULAN KE</th>
+                        <th>STATUS</th>
+                        <th>JUMLAH</th>
+                        <th>SUMBER</th>
+                        <th>AKSI</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php $i = 0; ?>
+                      @foreach ($form as $row)
+                      <tr>
+                        <td scope="row">{{ $i+=1 }}</td>
+                        <td>SPT 1770</td>
+                        <td>{{ $row['tahun'] }}/01-12</td>
+                        <td>{{ $row['pembetulan']}}</td>
+                        <td>{{ $row['status']}}</td>
+                        <td>{{ $row['jumlah'] ?? 0}}</td>
+                        <td>E-Form 1770</td>
+                        <td><a class="btn <?php if ($row['cek_submit']) { ?>disabled-link <?php } ?>" href="formulir-IV/{{ $row['id']}}" <?php if ($row['cek_submit']) { ?>disabled <?php } ?>>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAoElEQVR4nNXTSwpBYRgG4GemmBpZgg3YhEvZgV1wnIlcFmBkI0oxoOzBLgyRCSmDf+B0Lije+gbf5Onv7/345UQ4ZphNGrTFLeOUPwlV34WGqOOCUVEowhRLdDEvAkWYBfvL16RBMcbBvkMlLxRjkhVJghboBfsabZTyQi10sAqQU94endHEHrUAyV3IAxroP8/i+q1mS8og49E+/uoPcgezcIvoozDVWgAAAABJRU5ErkJggg==">
+  
+                          </a>
+                          <a class="btn" href="formulir_print/{{ $row['id']}}?download=pdf">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAmUlEQVR4nO3UPwrCMBiH4Udw092D9AKexr2DeAUnz+BFlIKbCnoBcfUUrRQqFGmaturmCz/Iny9vQgLhR8yQYhVJWtUGOaPomGObKG9YsMO+YbysDdK08wXXwFwvUdGSv8j37+iBDdZv6S1KMMeilmSIaIRbrZ9hMkRUcq/aB0xFyCOiLHaSF6cW0barpKT8GpaB1xl3lXzEE0Q8l4vjjj5xAAAAAElFTkSuQmCC">
+                          </a>
+                        </td>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
+                </div>
+  
               </div>
-
+              </div>
             </div>
+
           </div>
         </div>
 

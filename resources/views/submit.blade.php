@@ -358,7 +358,7 @@
         }
 
         function deleteTableSubmit(nama) {
-            var checkboxes = document.getElementsByName("dataharta_id");
+            var checkboxes = document.getElementsByName("setorpajak_id");
             let checkedValues = [];
 
             Swal.fire({

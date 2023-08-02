@@ -124,153 +124,148 @@ Route::middleware(['is_login'])->group(function () {
     Route::post('/prosestambahspt', [FormController::class, 'prosestambahspt']);
 
     // Jenis Pelaporan
-Route::post('/JenisUpdate/{id}', [FormController::class, 'update_jenis_pelaporan']);
+    Route::post('/JenisUpdate/{id}', [FormController::class, 'update_jenis_pelaporan']);
 
-// Cek Pembetulan
-Route::post('/CekPembetulan/{id}', [FormController::class, 'update_cek_pembetulan']);
+    // Cek Pembetulan
+    Route::post('/CekPembetulan/{id}', [FormController::class, 'update_cek_pembetulan']);
 
-// Jenis Audit
-Route::post('/JenisAudit/{id}', [FormController::class, 'update_is_audit']);
+    // Jenis Audit
+    Route::post('/JenisAudit/{id}', [FormController::class, 'update_is_audit']);
 
-// Jenis PTKP
-Route::post('/JenisPTKP/{id}', [FormController::class, 'update_PTKP']);
+    // Jenis PTKP
+    Route::post('/JenisPTKP/{id}', [FormController::class, 'update_PTKP']);
 
-// Jenis Kredit Pajak
-Route::post('/JenisKreditPajak/{id}', [FormController::class, 'update_jenis_KreditPajak']);
+    // Jenis Kredit Pajak
+    Route::post('/JenisKreditPajak/{id}', [FormController::class, 'update_jenis_KreditPajak']);
 
-// Jenis PPh Kurang/Lebih Bayar
-Route::post('/JenisPPhKurangLebih/{id}', [FormController::class, 'update_jenis_PPhKurang_LebihBayar']);
+    // Jenis PPh Kurang/Lebih Bayar
+    Route::post('/JenisPPhKurangLebih/{id}', [FormController::class, 'update_jenis_PPhKurang_LebihBayar']);
 
-// PermohonanPPhLebihBayar
-Route::post('/PermohonanPPhLebihBayar/{id}', [FormController::class, 'update_permohonan_PPhLebihBayar']);
+    // PermohonanPPhLebihBayar
+    Route::post('/PermohonanPPhLebihBayar/{id}', [FormController::class, 'update_permohonan_PPhLebihBayar']);
 
-// Angsuran PPh Pasal 25
-Route::post('/AngsuranPPhPasal25/{id}', [FormController::class, 'update_angsuran_PPh25']);
+    // Angsuran PPh Pasal 25
+    Route::post('/AngsuranPPhPasal25/{id}', [FormController::class, 'update_angsuran_PPh25']);
 
-// Perhitungan Sendiri
-Route::post('/PerhitunganSendiri/{id}', [FormController::class, 'update_perhitungan_sendiri']);
+    // Perhitungan Sendiri
+    Route::post('/PerhitunganSendiri/{id}', [FormController::class, 'update_perhitungan_sendiri']);
 
-// Pilihan PTKP
-Route::post('/PilihanPTKP/{id}', [FormController::class, 'update_pilihan_PTKP']);
+    // Pilihan PTKP
+    Route::post('/PilihanPTKP/{id}', [FormController::class, 'update_pilihan_PTKP']);
 
-// Pelapor Pajak
-Route::post('/PelaporPajak/{id}', [FormController::class, 'update_pelapor_pajak']);
+    // Pelapor Pajak
+    Route::post('/PelaporPajak/{id}', [FormController::class, 'update_pelapor_pajak']);
 
-// Status Penghasilan Neto
-Route::post('/StatusPengNeto/{id}', [FormController::class, 'update_PengNeto']);
+    // Status Penghasilan Neto
+    Route::post('/StatusPengNeto/{id}', [FormController::class, 'update_PengNeto']);
 
-// Data Harta
-Route::post('/DataHartaImport', [DataHartaController::class, 'importexcel'])->name('DataHartaImport');
-Route::post('/DataHarta/Store', [DataHartaController::class, 'store']);
-Route::post('/DataHarta/delete', [DataHartaController::class, 'delete']);
-Route::post('/SaveDataHarta/{id}', [DataHartaController::class, 'save']);
+    // Data Harta
+    Route::post('/DataHartaImport', [DataHartaController::class, 'importexcel'])->name('DataHartaImport');
+    Route::post('/DataHarta/Store', [DataHartaController::class, 'store']);
+    Route::post('/DataHarta/delete', [DataHartaController::class, 'delete']);
+    Route::post('/SaveDataHarta/{id}', [DataHartaController::class, 'save']);
 
-// Data Utang
-Route::post('/DataUtangImport', [DataUtangController::class, 'importexcel'])->name('DataUtangImport');
-Route::post('/DataUtang/Store', [DataUtangController::class, 'store']);
-Route::post('/DataUtang/delete', [DataUtangController::class, 'delete']);
-Route::post('/SaveDataUtang/{id}', [DataUtangController::class, 'save']);
+    // Data Utang
+    Route::post('/DataUtangImport', [DataUtangController::class, 'importexcel'])->name('DataUtangImport');
+    Route::post('/DataUtang/Store', [DataUtangController::class, 'store']);
+    Route::post('/DataUtang/delete', [DataUtangController::class, 'delete']);
+    Route::post('/SaveDataUtang/{id}', [DataUtangController::class, 'save']);
 
-// Data Keluarga
-Route::post('/DataKel/Store', [DataKelController::class, 'store']);
-Route::post('/DataKel/delete', [DataKelController::class, 'delete']);
-Route::post('/SaveDataKel/{id}', [DataKelController::class, 'save']);
+    // Data Keluarga
+    Route::post('/DataKel/Store', [DataKelController::class, 'store']);
+    Route::post('/DataKel/delete', [DataKelController::class, 'delete']);
+    Route::post('/SaveDataKel/{id}', [DataKelController::class, 'save']);
 
-// Data Potong Pungut
-Route::post('/DataPotongPungutImport', [DataPotongPungutController::class, 'importexcel'])->name('DataPotongPungutImport');
-Route::post('/DataPotongPungut/Store', [DataPotongPungutController::class, 'store']);
-Route::post('/DataPotongPungut/delete', [DataPotongPungutController::class, 'delete']);
-Route::post('/SaveDataPotongPungut/{id}', [DataPotongPungutController::class, 'save']);
+    // Data Potong Pungut
+    Route::post('/DataPotongPungutImport', [DataPotongPungutController::class, 'importexcel'])->name('DataPotongPungutImport');
+    Route::post('/DataPotongPungut/Store', [DataPotongPungutController::class, 'store']);
+    Route::post('/DataPotongPungut/delete', [DataPotongPungutController::class, 'delete']);
+    Route::post('/SaveDataPotongPungut/{id}', [DataPotongPungutController::class, 'save']);
 
-// DataPP46/23
-Route::post('/DataDaftar4623Import', [PP46danPP23Controller::class, 'importexcel'])->name('DataDaftar4623Import');
-Route::post('/Datapp46danpp23/Store', [PP46danPP23Controller::class, 'store']);
-Route::post('/Datapp46danpp23/delete', [PP46danPP23Controller::class, 'delete']);
-Route::post('/SaveDataPP4623/{id}', [PP46danPP23Controller::class, 'save']);
-Route::post('/simpanAlamat/{id}', [PP46danPP23Controller::class, 'store']);
-Route::post('/Alamat/Store/{id}', [PP46danPP23Controller::class, 'store']);
+    // DataPP46/23
+    Route::post('/DataDaftar4623Import', [PP46danPP23Controller::class, 'importexcel'])->name('DataDaftar4623Import');
+    Route::post('/Datapp46danpp23/Store', [PP46danPP23Controller::class, 'store']);
+    Route::post('/Datapp46danpp23/delete', [PP46danPP23Controller::class, 'delete']);
+    Route::post('/SaveDataPP4623/{id}', [PP46danPP23Controller::class, 'save']);
+    Route::post('/simpanAlamat/{id}', [PP46danPP23Controller::class, 'store']);
+    Route::post('/Alamat/Store/{id}', [PP46danPP23Controller::class, 'store']);
 
 
-// Formulir III A
-Route::post('/FormulirIIIA_Point/Store/{id}', [FormulirIIIController::class, 'store']);
-Route::post('/FormulirIIIA_Point/delete/{id}', [FormulirIIIController::class, 'delete']);
+    // Formulir III A
+    Route::post('/FormulirIIIA_Point/Store/{id}', [FormulirIIIController::class, 'store']);
+    Route::post('/FormulirIIIA_Point/delete/{id}', [FormulirIIIController::class, 'delete']);
 
-// Check PP46/23
-Route::post('/CheckPP46_23/{id}', [FormController::class, 'update_PP4623']);
+    // Check PP46/23
+    Route::post('/CheckPP46_23/{id}', [FormController::class, 'update_PP4623']);
 
-// Formulir III B
-Route::post('/FormulirIIIB_Point/Store/{id}', [FormulirIIIController::class, 'store2']);
-Route::post('/FormulirIIIB_Point/delete/{id}', [FormulirIIIController::class, 'delete2']);
+    // Formulir III B
+    Route::post('/FormulirIIIB_Point/Store/{id}', [FormulirIIIController::class, 'store2']);
+    Route::post('/FormulirIIIB_Point/delete/{id}', [FormulirIIIController::class, 'delete2']);
 
-// Formulir III C
-Route::post('/FormulirIIIC_Point/Store/{id}', [FormulirIIIController::class, 'store3']);
-Route::post('/FormulirIIIC_Point/delete/{id}', [FormulirIIIController::class, 'delete3']);
+    // Formulir III C
+    Route::post('/FormulirIIIC_Point/Store/{id}', [FormulirIIIController::class, 'store3']);
+    Route::post('/FormulirIIIC_Point/delete/{id}', [FormulirIIIController::class, 'delete3']);
 
-// Formulir I Audit
-Route::post('Audit/Store/{id}', [AuditController::class, 'store']);
-Route::post('Audit/delete/{id}', [AuditController::class, 'delete']);
-Route::post('SaveAudit/{id}', [AuditController::class, 'store']);
+    // Formulir I Audit
+    Route::post('Audit/Store/{id}', [AuditController::class, 'store']);
+    Route::post('Audit/delete/{id}', [AuditController::class, 'delete']);
+    Route::post('SaveAudit/{id}', [AuditController::class, 'store']);
 
-// Formulir I
-Route::post('/FormulirI_Point/Store/{id}', [FormulirIController::class, 'store']);
-Route::post('/FormulirI_Point/delete/{id}', [FormulirIController::class, 'delete']);
+    // Formulir I
+    Route::post('/FormulirI_Point/Store/{id}', [FormulirIController::class, 'store']);
+    Route::post('/FormulirI_Point/delete/{id}', [FormulirIController::class, 'delete']);
 
-// Formulir I2 B
-Route::post('/FormulirI2B_Point/Store/{id}', [FormulirI2Controller::class, 'store']);
-Route::post('/FormulirI2B_Point/delete/{id}', [FormulirI2Controller::class, 'delete']);
+    // Formulir I2 B
+    Route::post('/FormulirI2B_Point/Store/{id}', [FormulirI2Controller::class, 'store']);
+    Route::post('/FormulirI2B_Point/delete/{id}', [FormulirI2Controller::class, 'delete']);
 
-// Formulir I2 C
-Route::post('/FormulirI2C/Store', [FormulirI2CController::class, 'store']);
-Route::post('/FormulirI2C/delete', [FormulirI2CController::class, 'delete']);
-Route::post('/SaveFormulirI2C', [FormulirI2CController::class, 'save']);
+    // Formulir I2 C
+    Route::post('/FormulirI2C/Store', [FormulirI2CController::class, 'store']);
+    Route::post('/FormulirI2C/delete', [FormulirI2CController::class, 'delete']);
+    Route::post('/SaveFormulirI2C', [FormulirI2CController::class, 'save']);
 
-// Formulir I2 D
-Route::post('/FormulirI2D_Point/Store/{id}', [FormulirI2Controller::class, 'store3']);
-Route::post('/FormulirI2D_Point/delete/{id}', [FormulirI2Controller::class, 'delete3']);
+    // Formulir I2 D
+    Route::post('/FormulirI2D_Point/Store/{id}', [FormulirI2Controller::class, 'store3']);
+    Route::post('/FormulirI2D_Point/delete/{id}', [FormulirI2Controller::class, 'delete3']);
 
-// Formulir 1770 Kolom Identitas
-Route::post('KolomIdentitas/Store/{id}', [KolomIdentitasController::class, 'store']);
-Route::post('KolomIdentitas/delete/{id}', [KolomIdentitasController::class, 'delete']);
-Route::post('SaveKolomIdentitas/{id}', [KolomIdentitasController::class, 'save']);
+    // Formulir 1770 Kolom Identitas
+    Route::post('KolomIdentitas/Store/{id}', [KolomIdentitasController::class, 'store']);
+    Route::post('KolomIdentitas/delete/{id}', [KolomIdentitasController::class, 'delete']);
+    Route::post('SaveKolomIdentitas/{id}', [KolomIdentitasController::class, 'save']);
 
-// Formulir 1770
-Route::post('/Formulir1770_Point/Store/{id}', [Formulir1770Controller::class, 'store']);
-Route::post('/Formulir1770_Point/delete', [Formulir1770Controller::class, 'delete']);
+    // Formulir 1770
+    Route::post('/Formulir1770_Point/Store/{id}', [Formulir1770Controller::class, 'store']);
+    Route::post('/Formulir1770_Point/delete', [Formulir1770Controller::class, 'delete']);
 
-// Formulir PH-MT
-Route::post('/PhMt_Point/Store/{id}', [FormulirPhMtController::class, 'store']);
-Route::post('/PhMt2_Point/Store/{id}', [FormulirPhMtController::class, 'store2']);
-Route::post('/PhMt3_Point/Store/{id}', [FormulirPhMtController::class, 'store3']);
-Route::post('/PhMt_Point/delete/{id}', [FormulirPhMtController::class, 'delete']);
+    // Formulir PH-MT
+    Route::post('/PhMt_Point/Store/{id}', [FormulirPhMtController::class, 'store']);
+    Route::post('/PhMt2_Point/Store/{id}', [FormulirPhMtController::class, 'store2']);
+    Route::post('/PhMt3_Point/Store/{id}', [FormulirPhMtController::class, 'store3']);
+    Route::post('/PhMt_Point/delete/{id}', [FormulirPhMtController::class, 'delete']);
 
-// Formulir Print PDF
-Route::get('/formulir_print/{id}', [FormController::class, 'DomPdf']);
+    // Formulir Print PDF
+    Route::get('/formulir_print/{id}', [FormController::class, 'DomPdf']);
 
-Route::get('signaturepad', [SignaturePadController::class, 'index']);
-Route::post('signaturepad', [SignaturePadController::class, 'upload'])->name('signaturepad.upload');
+    Route::get('signaturepad', [SignaturePadController::class, 'index']);
+    Route::post('signaturepad', [SignaturePadController::class, 'upload'])->name('signaturepad.upload');
 
-// Tanda Tangan
-Route::post('/PhMt_TTD/{id}', [FormulirPhMtController::class, 'ttd']);
-Route::post('/1770_TTD/{id}', [Formulir1770Controller::class, 'ttd']);
+    // Tanda Tangan
+    Route::post('/PhMt_TTD/{id}', [FormulirPhMtController::class, 'ttd']);
+    Route::post('/1770_TTD/{id}', [Formulir1770Controller::class, 'ttd']);
 
-// Submit File
-Route::post('/SubmitFile/{id}', [SubmitFileController::class, 'SubmitFile']);
-Route::get('download/{id}', [SubmitFileController::class, 'download']);
-Route::post('/getKodeSetor', [FormController::class, 'getKodeSetor'])->name('getKodeSetor');
+    // Submit File
+    Route::post('/SubmitFile/{id}', [SubmitFileController::class, 'SubmitFile']);
+    Route::get('download/{id}', [SubmitFileController::class, 'download']);
+    Route::post('/getKodeSetor', [FormController::class, 'getKodeSetor'])->name('getKodeSetor');
 
-Route::post('/DataSetorPajakImport', [SubmitFileController::class, 'importexcel'])->name('DataSetorPajakImport');
-Route::post('/DataSubmit/Store', [SubmitFileController::class, 'store']);
-Route::post('/DataSubmit/delete', [SubmitFileController::class, 'delete']);
-Route::post('/SaveDataSubmit/{id}', [SubmitFileController::class, 'save']);
+    Route::post('/DataSetorPajakImport', [SubmitFileController::class, 'importexcel'])->name('DataSetorPajakImport');
+    Route::post('/DataSubmit/Store', [SubmitFileController::class, 'store']);
+    Route::post('/DataSubmit/delete', [SubmitFileController::class, 'delete']);
+    Route::post('/SaveDataSubmit/{id}', [SubmitFileController::class, 'save']);
 
-Route::post('/SubmitForm/{id}', [FormController::class, 'submit_form']);
+    Route::post('/SubmitForm/{id}', [FormController::class, 'submit_form']);
 
-Route::get('/tes1', function () {
-    return view('tes1');
+    Route::get('/tes1', function () {
+        return view('tes1');
+    });
 });
-
-});
-
-
-
-
