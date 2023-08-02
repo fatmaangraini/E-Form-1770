@@ -647,7 +647,7 @@
                     },
                     type: "POST",
                     data: data,
-                    url: 'http://localhost:8000/CekPembetulan/{{ $spt->id }}',
+                    url: '/CekPembetulan/{{ $spt->id }}',
                     success: function(res) {
                         console.log(res)
                     }
@@ -663,7 +663,7 @@
                 },
                 type: "POST",
                 data: data,
-                url: 'http://localhost:8000/CekPembetulan/{{ $spt->id }}',
+                url: '/CekPembetulan/{{ $spt->id }}',
                 success: function(res) {
                     console.log(res)
                 }
@@ -683,7 +683,7 @@
         //                 },
         //                 type: "POST",
         //                 data: data,
-        //                 url: 'http://localhost:8000/JenisUpdate/{{ $spt->id }}',
+        //                 url: '/JenisUpdate/{{ $spt->id }}',
         //                 success: function(res) {
         //                     console.log(res)
         //                 }
@@ -786,7 +786,7 @@
         //                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         //                     },
         //                     type: "POST",
-        //                     url: 'http://localhost:8000/DataHarta/delete',
+        //                     url: '/DataHarta/delete',
         //                     success: function(res) {
         //                         $('#' + nama + ' tr:last').remove();
         //                         var countdatas = <?= count($data_harta) ?>,
@@ -808,7 +808,7 @@
         //                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         //                     },
         //                     type: "POST",
-        //                     url: 'http://localhost:8000/DataHarta/delete',
+        //                     url: '/DataHarta/delete',
         //                     success: function(res) {
         //                         $('#' + nama + ' tr:last').remove();
         //                         format();
@@ -855,7 +855,7 @@
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
                         type: "POST",
-                        url: 'http://localhost:8000/DataHarta/delete',
+                        url: '/DataHarta/delete',
                         data: {
                             checkedValues: checkedValues
                         },
@@ -978,7 +978,7 @@
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
                         type: "POST",
-                        url: 'http://localhost:8000/DataUtang/delete',
+                        url: '/DataUtang/delete',
                         data: {
                             checkedValues: checkedValues
                         },
@@ -1085,7 +1085,7 @@
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
                         type: "POST",
-                        url: 'http://localhost:8000/DataKel/delete',
+                        url: '/DataKel/delete',
                         data: {
                             checkedValues: checkedValues
                         },

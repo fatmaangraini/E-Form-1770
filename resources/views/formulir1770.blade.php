@@ -755,7 +755,7 @@
                         },
                         type: "POST",
                         data: data,
-                        url: 'http://localhost:8000/CekPembetulan/{{ $spt->id }}',
+                        url: '/CekPembetulan/{{ $spt->id }}',
                         success: function(res) {
                             console.log(res)
                         }
@@ -771,7 +771,7 @@
                     },
                     type: "POST",
                     data: data,
-                    url: 'http://localhost:8000/CekPembetulan/{{ $spt->id }}',
+                    url: '/CekPembetulan/{{ $spt->id }}',
                     success: function(res) {
                         console.log(res)
                     }
@@ -791,7 +791,7 @@
                     },
                     type: "POST",
                     data: data,
-                    url: 'http://localhost:8000/JenisPTKP/{{ $form1770 }}',
+                    url: '/JenisPTKP/{{ $form1770 }}',
                     success: function(res) {
                         console.log(res)
                     }
@@ -810,7 +810,7 @@
                             },
                             type: "POST",
                             data: data,
-                            url: 'http://localhost:8000/JenisUpdate/{{ $spt->id }}',
+                            url: '/JenisUpdate/{{ $spt->id }}',
                             success: function(res) {
                                 console.log(res)
                             }
@@ -832,7 +832,7 @@
                             },
                             type: "POST",
                             data: data,
-                            url: 'http://localhost:8000/JenisKreditPajak/{{ $form1770 }}',
+                            url: '/JenisKreditPajak/{{ $form1770 }}',
                             success: function(res) {
                                 console.log(res)
                             }
@@ -853,7 +853,7 @@
                             },
                             type: "POST",
                             data: data,
-                            url: 'http://localhost:8000/JenisPPhKurangLebih/{{ $form1770 }}',
+                            url: '/JenisPPhKurangLebih/{{ $form1770 }}',
                             success: function(res) {
                                 console.log(res)
                             }
@@ -874,7 +874,7 @@
                             },
                             type: "POST",
                             data: data,
-                            url: 'http://localhost:8000/PermohonanPPhLebihBayar/{{ $form1770 }}',
+                            url: '/PermohonanPPhLebihBayar/{{ $form1770 }}',
                             success: function(res) {
                                 console.log(res)
                             }
@@ -895,7 +895,7 @@
                             },
                             type: "POST",
                             data: data,
-                            url: 'http://localhost:8000/AngsuranPPhPasal25/{{ $form1770 }}',
+                            url: '/AngsuranPPhPasal25/{{ $form1770 }}',
                             success: function(res) {
                                 console.log(res)
                             }
@@ -916,7 +916,7 @@
                             },
                             type: "POST",
                             data: data,
-                            url: 'http://localhost:8000/PelaporPajak/{{ $form1770 }}',
+                            url: '/PelaporPajak/{{ $form1770 }}',
                             success: function(res) {
                                 console.log(res)
                             }
@@ -988,7 +988,7 @@
                     },
                     type: "post",
                     data: data,
-                    url: 'http://localhost:8000/KolomIdentitas/Store/{{ $form1770 }}',
+                    url: '/KolomIdentitas/Store/{{ $form1770 }}',
                     success: function(res) {
                         Swal.fire(
                             'Data Berhasil Tersimpan',
@@ -1005,7 +1005,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: "POST",
-                    url: 'http://localhost:8000/KolomIdentitas/delete/{{ $form1770 }}',
+                    url: '/KolomIdentitas/delete/{{ $form1770 }}',
                     success: function(res) {
                         Swal.fire({
                                 title: 'Apa kamu yakin?',
@@ -1297,7 +1297,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: "POST",
-                    url: 'http://localhost:8000/Formulir1770_Point/Store/{{ $form1770 }}',
+                    url: '/Formulir1770_Point/Store/{{ $form1770 }}',
                     data: data,
                     success: function(res) {
                         Swal.fire({
@@ -1323,7 +1323,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: "POST",
-                    url: 'http://localhost:8000/Formulir1770_Point/delete',
+                    url: '/Formulir1770_Point/delete',
                     success: function(res) {
                         Swal.fire({
                                 title: 'Apa kamu yakin?',
@@ -1369,7 +1369,7 @@
                         },
                         type: "POST",
                         data: data,
-                        url: 'http://localhost:8000/PerhitunganSendiri/{{ $form1770 }}',
+                        url: '/PerhitunganSendiri/{{ $form1770 }}',
                         success: function(res) {
                             console.log(res)
                         }
@@ -1385,7 +1385,7 @@
                     },
                     type: "POST",
                     data: data,
-                    url: 'http://localhost:8000/PerhitunganSendiri/{{ $form1770 }}',
+                    url: '/PerhitunganSendiri/{{ $form1770 }}',
                     success: function(res) {
                         console.log(res)
                     }

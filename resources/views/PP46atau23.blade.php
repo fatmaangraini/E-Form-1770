@@ -342,7 +342,7 @@
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
                         type: "POST",
-                        url: 'http://localhost:8000/Datapp46danpp23/delete',
+                        url: '/Datapp46danpp23/delete',
                         data: {
                             checkedValues: checkedValues
                         },

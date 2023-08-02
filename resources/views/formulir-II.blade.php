@@ -281,7 +281,7 @@
                     },
                     type: "POST",
                     data: data,
-                    url: 'http://localhost:8000/CekPembetulan/{{ $spt->id }}',
+                    url: '/CekPembetulan/{{ $spt->id }}',
                     success: function(res) {
                         console.log(res)
                     }
@@ -297,7 +297,7 @@
                 },
                 type: "POST",
                 data: data,
-                url: 'http://localhost:8000/CekPembetulan/{{ $spt->id }}',
+                url: '/CekPembetulan/{{ $spt->id }}',
                 success: function(res) {
                     console.log(res)
                 }
@@ -317,7 +317,7 @@
                         },
                         type: "POST",
                         data: data,
-                        url: 'http://localhost:8000/JenisUpdate/{{ $spt->id }}',
+                        url: '/JenisUpdate/{{ $spt->id }}',
                         success: function(res) {
                             console.log(res)
                         }
@@ -460,7 +460,7 @@
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
                         type: "POST",
-                        url: 'http://localhost:8000/DataPotongPungut/delete',
+                        url: '/DataPotongPungut/delete',
                         data: {
                             checkedValues: checkedValues
                         },

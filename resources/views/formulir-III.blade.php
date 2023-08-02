@@ -290,7 +290,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: "POST",
-                    url: 'http://localhost:8000/FormulirIIIA_Point/Store/{{ $form3 }}',
+                    url: '/FormulirIIIA_Point/Store/{{ $form3 }}',
                     data: data,
                     success: function(res) {
                         Swal.fire({
@@ -374,7 +374,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: "POST",
-                    url: 'http://localhost:8000/FormulirIIIA_Point/delete/{{ $form3 }}',
+                    url: '/FormulirIIIA_Point/delete/{{ $form3 }}',
                     success: function(res) {
                         Swal.fire({
                                 title: 'Apa kamu yakin?',
@@ -487,7 +487,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: "POST",
-                    url: 'http://localhost:8000/FormulirIIIB_Point/Store/{{ $form3 }}',
+                    url: '/FormulirIIIB_Point/Store/{{ $form3 }}',
                     data: data,
                     success: function(res) {
                         Swal.fire(
@@ -507,7 +507,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: "POST",
-                    url: 'http://localhost:8000/FormulirIIIB_Point/delete/{{ $form3 }}',
+                    url: '/FormulirIIIB_Point/delete/{{ $form3 }}',
                     success: function(res) {
                         Swal.fire({
                                 title: 'Apa kamu yakin?',
@@ -567,7 +567,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: "POST",
-                    url: 'http://localhost:8000/FormulirIIIC_Point/Store/{{ $form3 }}',
+                    url: '/FormulirIIIC_Point/Store/{{ $form3 }}',
                     data: data,
                     success: function(res) {
                         Swal.fire(
@@ -585,7 +585,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: "POST",
-                    url: 'http://localhost:8000/FormulirIIIC_Point/delete/{{ $form3 }}',
+                    url: '/FormulirIIIC_Point/delete/{{ $form3 }}',
                     success: function(res) {
                         Swal.fire({
                                 title: 'Apa kamu yakin?',
@@ -642,7 +642,7 @@
                     },
                     type: "POST",
                     data: data,
-                    url: 'http://localhost:8000/CekPembetulan/{{ $spt->id }}',
+                    url: '/CekPembetulan/{{ $spt->id }}',
                     success: function(res) {
                         console.log(res)
                     }
@@ -658,7 +658,7 @@
                 },
                 type: "POST",
                 data: data,
-                url: 'http://localhost:8000/CekPembetulan/{{ $spt->id }}',
+                url: '/CekPembetulan/{{ $spt->id }}',
                 success: function(res) {
                     console.log(res)
                 }
@@ -678,7 +678,7 @@
                         },
                         type: "POST",
                         data: data,
-                        url: 'http://localhost:8000/JenisUpdate/{{ $spt->id }}',
+                        url: '/JenisUpdate/{{ $spt->id }}',
                         success: function(res) {
                             console.log(res)
                         }
@@ -697,7 +697,7 @@
                     },
                     type: "POST",
                     data: data,
-                    url: 'http://localhost:8000/CheckPP46_23/{{ $form3 }}',
+                    url: '/CheckPP46_23/{{ $form3 }}',
                     success: function(res) {
                         console.log(res)
                     }
@@ -713,7 +713,7 @@
                 },
                 type: "POST",
                 data: data,
-                url: 'http://localhost:8000/CheckPP46_23/{{ $form3 }}',
+                url: '/CheckPP46_23/{{ $form3 }}',
                 success: function(res) {
                     console.log(res)
                 }

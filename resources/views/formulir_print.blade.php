@@ -3044,7 +3044,7 @@
                 },
                 type: "POST",
                 data: data,
-                url: 'http://localhost:8000/JenisPTKP/{{ $form1770 }}',
+                url: '/JenisPTKP/{{ $form1770 }}',
                 success: function(res) {
                     console.log(res)
                 }
@@ -3061,7 +3061,7 @@
                     },
                     type: "POST",
                     data: data,
-                    url: 'http://localhost:8000/PerhitunganSendiri/{{ $form1770 }}',
+                    url: '/PerhitunganSendiri/{{ $form1770 }}',
                     success: function(res) {
                         console.log(res)
                     }
@@ -3077,7 +3077,7 @@
                 },
                 type: "POST",
                 data: data,
-                url: 'http://localhost:8000/PerhitunganSendiri/{{ $form1770 }}',
+                url: '/PerhitunganSendiri/{{ $form1770 }}',
                 success: function(res) {
                     console.log(res)
                 }
@@ -3098,7 +3098,7 @@
                         },
                         type: "POST",
                         data: data,
-                        url: 'http://localhost:8000/JenisKreditPajak/{{ $form1770 }}',
+                        url: '/JenisKreditPajak/{{ $form1770 }}',
                         success: function(res) {
                             console.log(res)
                         }
@@ -3119,7 +3119,7 @@
                         },
                         type: "POST",
                         data: data,
-                        url: 'http://localhost:8000/JenisPPhKurangLebih/{{ $form1770 }}',
+                        url: '/JenisPPhKurangLebih/{{ $form1770 }}',
                         success: function(res) {
                             console.log(res)
                         }
@@ -3140,7 +3140,7 @@
                         },
                         type: "POST",
                         data: data,
-                        url: 'http://localhost:8000/PermohonanPPhLebihBayar/{{ $form1770 }}',
+                        url: '/PermohonanPPhLebihBayar/{{ $form1770 }}',
                         success: function(res) {
                             console.log(res)
                         }
@@ -3161,7 +3161,7 @@
                         },
                         type: "POST",
                         data: data,
-                        url: 'http://localhost:8000/AngsuranPPhPasal25/{{ $form1770 }}',
+                        url: '/AngsuranPPhPasal25/{{ $form1770 }}',
                         success: function(res) {
                             console.log(res)
                         }
@@ -3183,7 +3183,7 @@
                 },
                 type: "POST",
                 data: data,
-                url: 'http://localhost:8000/StatusPengNeto/{{ $formPhMt }}',
+                url: '/StatusPengNeto/{{ $formPhMt }}',
                 success: function(res) {
                     console.log(res)
                 }
@@ -3234,7 +3234,7 @@
                         },
                         type: "POST",
                         data: data,
-                        url: 'http://localhost:8000/JenisUpdate/{{ $spt->id }}',
+                        url: '/JenisUpdate/{{ $spt->id }}',
                         success: function(res) {
                             console.log(res)
                         }
@@ -3255,7 +3255,7 @@
                         },
                         type: "POST",
                         data: data,
-                        url: 'http://localhost:8000/JenisAudit/{{ $form1->id }}',
+                        url: '/JenisAudit/{{ $form1->id }}',
                         success: function(res) {
                             console.log(res)
                         }
@@ -3715,7 +3715,7 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 type: "POST",
-                url: 'http://localhost:8000/FormulirI2D_Point/Store/{{ $form1_2 }}',
+                url: '/FormulirI2D_Point/Store/{{ $form1_2 }}',
                 data: data,
                 success: function(res) {
                     Swal.fire({

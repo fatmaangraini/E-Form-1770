@@ -655,7 +655,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: "POST",
-                    url: 'http://localhost:8000/FormulirI_Point/Store/{{ $form1->id }}',
+                    url: '/FormulirI_Point/Store/{{ $form1->id }}',
                     data: data,
                     success: function(res) {
                         Swal.fire({
@@ -681,7 +681,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: "POST",
-                    url: 'http://localhost:8000/FormulirI_Point/delete/{{ $form1->id }}',
+                    url: '/FormulirI_Point/delete/{{ $form1->id }}',
                     success: function(res) {
                         Swal.fire({
                                 title: 'Apa kamu yakin?',
@@ -765,7 +765,7 @@
                         },
                         type: "POST",
                         data: data,
-                        url: 'http://localhost:8000/CekPembetulan/{{ $spt->id }}',
+                        url: '/CekPembetulan/{{ $spt->id }}',
                         success: function(res) {
                             console.log(res)
                         }
@@ -781,7 +781,7 @@
                     },
                     type: "POST",
                     data: data,
-                    url: 'http://localhost:8000/CekPembetulan/{{ $spt->id }}',
+                    url: '/CekPembetulan/{{ $spt->id }}',
                     success: function(res) {
                         console.log(res)
                     }
@@ -840,7 +840,7 @@
                     },
                     type: "post",
                     data: data,
-                    url: 'http://localhost:8000/Audit/Store/{{ $form1->id }}',
+                    url: '/Audit/Store/{{ $form1->id }}',
                     success: function(res) {
                         Swal.fire({
                                 title: 'Data Berhasil Tersimpan',
@@ -899,7 +899,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: "POST",
-                    url: 'http://localhost:8000/Audit/delete/{{ $form1->id }}',
+                    url: '/Audit/delete/{{ $form1->id }}',
                     success: function(res) {
                         Swal.fire({
                                 title: 'Apa kamu yakin?',
@@ -952,7 +952,7 @@
                             },
                             type: "POST",
                             data: data,
-                            url: 'http://localhost:8000/JenisUpdate/{{ $spt->id }}',
+                            url: '/JenisUpdate/{{ $spt->id }}',
                             success: function(res) {
                                 console.log(res)
                             }
@@ -974,7 +974,7 @@
                             },
                             type: "POST",
                             data: data,
-                            url: 'http://localhost:8000/JenisAudit/{{ $form1->id }}',
+                            url: '/JenisAudit/{{ $form1->id }}',
                             success: function(res) {
                                 console.log(res)
                             }

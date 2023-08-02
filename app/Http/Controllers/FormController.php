@@ -681,7 +681,7 @@ class FormController extends Controller
             $mail->Body    = "Halo $nama<br>
             Kami ingin memberitahu Anda bahwa alamat E-Form 1770 sudah tersedia dan siap untuk diakses. <br><br>
             Klik tautan di bawah ini untuk langsung menuju ke alamat E-Form 1770:<br>
-            <a class='btn' href='http://localhost:8000/formulir-IV/$id'>Elektonik Formulir Surat Pemberitahuan 1770</a><br><br>
+            <a class='btn' href='/formulir-IV/$id'>Elektonik Formulir Surat Pemberitahuan 1770</a><br><br>
             Terima kasih atas perhatiannya.";
 
             // $mail->AltBody = plain text version of email body;

@@ -12,7 +12,7 @@ $('input:radio[name="flexRadioDisabled"]').change(
                 },
                 type: "POST",
                 data: data,
-                url: `http://localhost:8000/JenisUpdate/${$(this).attr('data-id')}`,
+                url: `/JenisUpdate/${$(this).attr('data-id')}`,
                 success: function(res) {
                     console.log(res)
                 }

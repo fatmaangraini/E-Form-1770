@@ -419,7 +419,7 @@
                 },
                 type: "POST",
                 data: data,
-                url: 'http://localhost:8000/PilihanPTKP/{{ $formPhMt }}',
+                url: '/PilihanPTKP/{{ $formPhMt }}',
                 success: function(res) {
                     console.log(res)
                 }
@@ -439,7 +439,7 @@
                 },
                 type: "POST",
                 data: data,
-                url: 'http://localhost:8000/StatusPengNeto/{{ $formPhMt }}',
+                url: '/StatusPengNeto/{{ $formPhMt }}',
                 success: function(res) {
                     console.log(res)
                 }
@@ -649,7 +649,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: "POST",
-                    url: 'http://localhost:8000/PhMt_Point/Store/{{ $formPhMt }}',
+                    url: '/PhMt_Point/Store/{{ $formPhMt }}',
                     data: data,
                     success: function(res) {
                         Swal.fire({
@@ -690,7 +690,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: "POST",
-                    url: 'http://localhost:8000/PhMt2_Point/Store/{{ $formPhMt }}',
+                    url: '/PhMt2_Point/Store/{{ $formPhMt }}',
                     data: data,
                     success: function(res) {
                         location.reload()
@@ -721,7 +721,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: "POST",
-                    url: 'http://localhost:8000/PhMt3_Point/Store/{{ $formPhMt }}',
+                    url: '/PhMt3_Point/Store/{{ $formPhMt }}',
                     data: data,
                     success: function(res) {
                         location.reload()
@@ -737,7 +737,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: "POST",
-                    url: 'http://localhost:8000/PhMt_Point/delete/{{ $formPhMt }}',
+                    url: '/PhMt_Point/delete/{{ $formPhMt }}',
                     success: function(res) {
                         Swal.fire({
                                 title: 'Apa kamu yakin?',

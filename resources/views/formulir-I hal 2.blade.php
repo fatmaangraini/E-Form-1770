@@ -428,7 +428,7 @@
                         },
                         type: "POST",
                         data: data,
-                        url: 'http://localhost:8000/JenisUpdate/{{ $spt->id }}',
+                        url: '/JenisUpdate/{{ $spt->id }}',
                         success: function(res) {
                             console.log(res)
                         }
@@ -450,7 +450,7 @@
                     },
                     type: "POST",
                     data: data,
-                    url: 'http://localhost:8000/CekPembetulan/{{ $spt->id }}',
+                    url: '/CekPembetulan/{{ $spt->id }}',
                     success: function(res) {
                         console.log(res)
                     }
@@ -466,7 +466,7 @@
                 },
                 type: "POST",
                 data: data,
-                url: 'http://localhost:8000/CekPembetulan/{{ $spt->id }}',
+                url: '/CekPembetulan/{{ $spt->id }}',
                 success: function(res) {
                     console.log(res)
                 }
@@ -579,7 +579,7 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 type: "POST",
-                url: 'http://localhost:8000/FormulirI2B_Point/Store/{{ $form1_2 }}',
+                url: '/FormulirI2B_Point/Store/{{ $form1_2 }}',
                 data: data,
                 success: function(res) {
                     Swal.fire({
@@ -606,7 +606,7 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 type: "POST",
-                url: 'http://localhost:8000/FormulirI2B_Point/delete/{{ $form1_2 }}',
+                url: '/FormulirI2B_Point/delete/{{ $form1_2 }}',
                 success: function(res) {
                     Swal.fire({
                             title: 'Apa kamu yakin?',
@@ -766,7 +766,7 @@
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
                         type: "POST",
-                        url: 'http://localhost:8000/FormulirI2C/delete',
+                        url: '/FormulirI2C/delete',
                         data: {
                             checkedValues: checkedValues
                         },
@@ -829,7 +829,7 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 type: "POST",
-                url: 'http://localhost:8000/FormulirI2D_Point/Store/{{ $form1_2 }}',
+                url: '/FormulirI2D_Point/Store/{{ $form1_2 }}',
                 data: data,
                 success: function(res) {
                     Swal.fire({
@@ -855,7 +855,7 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 type: "POST",
-                url: 'http://localhost:8000/FormulirI2D_Point/delete/{{ $form1_2 }}',
+                url: '/FormulirI2D_Point/delete/{{ $form1_2 }}',
                 success: function(res) {
                     Swal.fire({
                             title: 'Apa kamu yakin?',

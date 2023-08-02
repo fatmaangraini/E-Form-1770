@@ -382,7 +382,7 @@
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
                         type: "POST",
-                        url: 'http://localhost:8000/DataSubmit/delete',
+                        url: '/DataSubmit/delete',
                         data: {
                             checkedValues: checkedValues
                         },
