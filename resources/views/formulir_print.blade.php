@@ -2339,7 +2339,7 @@
                     <u style="font-size: 11px; margin-left: 20px">[Diisi dri Formulir 1770-I Halaman 2 Jumlah Bagian D Kolom 3]</u>
                 </td>
                 <td style="border: 1px solid black; border-top: 0px; width: 3%;  text-align: center;  font-size:12px">3</td>
-                <td style="border: 1px solid black; border-top: 0px; width: 17%; background-color: #F0E68C"><input type="text" style="width: 100%; border: 0px solid black; background-color: #F0E68C; text-align: right" placeholder="0" id="penghasilanneto3" value="{{ $formulir_i2d }}" oninput="formulir1770()" disabled></td>
+                <td style="border: 1px solid black; border-top: 0px; width: 17%; background-color: #F0E68C"><input type="text" style="width: 100%; border: 0px solid black; background-color: #F0E68C; text-align: right" placeholder="0" id="penghasilanneto3" value="{{ $totalformulir_i2d }}" oninput="formulir1770()" disabled></td>
             </tr>
             <tr>
                 <td style="border: 1px solid black; border-bottom: 0px; border-top: 0px; width: 5%; "></td>
@@ -3219,6 +3219,7 @@
             format_bagianB();
             format_bagianC();
             format_bagianD();
+            formulir1770();
             window.print();
         });
         $('input:radio[name="flexRadioDisabled"]').change(
@@ -3737,101 +3738,124 @@
 
         // Formulir 1770
         function formulir1770() {
-            // PENGHASILAN NETO
-            valuePenghasilanNeto1 = numeral(penghasilanneto1.value);
-            document.getElementById('penghasilanneto1').value = valuePenghasilanNeto1.format();
+                // PENGHASILAN NETO
+                valuePenghasilanNeto1 = numeral(penghasilanneto1.value);
+                document.getElementById('penghasilanneto1').value = valuePenghasilanNeto1.format();
 
-            valuePenghasilanNeto2 = numeral(penghasilanneto2.value);
-            document.getElementById('penghasilanneto2').value = valuePenghasilanNeto2.format();
+                valuePenghasilanNeto2 = numeral(penghasilanneto2.value);
+                document.getElementById('penghasilanneto2').value = valuePenghasilanNeto2.format();
 
-            valuePenghasilanNeto3 = numeral(penghasilanneto3.value);
-            document.getElementById('penghasilanneto3').value = valuePenghasilanNeto3.format();
+                valuePenghasilanNeto3 = numeral(penghasilanneto3.value);
+                document.getElementById('penghasilanneto3').value = valuePenghasilanNeto3.format();
 
-            valuePenghasilanNeto4 = numeral(penghasilanneto4.value);
-            document.getElementById('penghasilanneto4').value = valuePenghasilanNeto4.format();
-            // HASIL 1+2+3+4
-            var penghasilanneto1234 = ((valuePenghasilanNeto1.value()) + (valuePenghasilanNeto2.value()) +
-                (valuePenghasilanNeto3.value()) + (valuePenghasilanNeto4.value()));
-            document.getElementById('penghasilanneto5').value = numeral(penghasilanneto1234).format();
+                valuePenghasilanNeto4 = numeral(penghasilanneto4.value);
+                document.getElementById('penghasilanneto4').value = valuePenghasilanNeto4.format();
+                // HASIL 1+2+3+4
+                var penghasilanneto1234 = ((valuePenghasilanNeto1.value()) + (valuePenghasilanNeto2.value()) +
+                    (valuePenghasilanNeto3.value()) + (valuePenghasilanNeto4.value()));
+                document.getElementById('penghasilanneto5').value = numeral(penghasilanneto1234).format();
 
-            valuePenghasilanNeto6 = numeral(penghasilanneto6.value);
-            document.getElementById('penghasilanneto6').value = valuePenghasilanNeto6.format();
+                valuePenghasilanNeto6 = numeral(penghasilanneto6.value);
+                document.getElementById('penghasilanneto6').value = valuePenghasilanNeto6.format();
 
-            // HASIL 5-6
-            var penghasilanneto56 = penghasilanneto1234 - ((valuePenghasilanNeto6.value()));
-            document.getElementById('penghasilanneto7').value = numeral(penghasilanneto56).format();
+                // HASIL 5-6
+                var penghasilanneto56 = penghasilanneto1234 - ((valuePenghasilanNeto6.value()));
+                document.getElementById('penghasilanneto7').value = numeral(penghasilanneto56).format();
 
-            // PENGHASILAN KENA PAJAK
-            valuePenghasilanKenaPajak8 = numeral(penghasilankenapajak8.value);
-            document.getElementById('penghasilankenapajak8').value = valuePenghasilanKenaPajak8.format();
+                // PENGHASILAN KENA PAJAK
+                valuePenghasilanKenaPajak8 = numeral(penghasilankenapajak8.value);
+                document.getElementById('penghasilankenapajak8').value = valuePenghasilanKenaPajak8.format();
 
-            // HASIL 7-8
-            var penghasilankenapajak78 = penghasilanneto56 - ((valuePenghasilanKenaPajak8.value()));
-            document.getElementById('penghasilankenapajak9').value = numeral(penghasilankenapajak78).format();
+                // HASIL 7-8
+                var penghasilankenapajak78 = penghasilanneto56 - ((valuePenghasilanKenaPajak8.value()));
+                document.getElementById('penghasilankenapajak9').value = numeral(penghasilankenapajak78).format();
 
-            // PTKP
-            var data = $("option:selected", $("#pilihanPTKP")).attr("data-value");
-            console.log();
-            document.getElementById("inputPTKP").value = numeral(data).format();
+                // PTKP
+                var data = $("option:selected", $("#pilihanPTKP")).attr("data-value");
+                console.log();
+                document.getElementById("inputPTKP").value = numeral(data).format();
 
-            // HASIL 9-10
-            var penghasilankenapajak910 = penghasilankenapajak78 - data;
-            document.getElementById('penghasilankenapajak11').value = numeral(penghasilankenapajak910).format();
+                // HASIL 9-10
+                var penghasilankenapajak910 = penghasilankenapajak78 - data;
+                document.getElementById('penghasilankenapajak11').value = numeral(penghasilankenapajak910).format();
+                if (penghasilankenapajak910 < 0) {
+                    // Jika nilai penghasilankenapajak11 negatif, berhenti di sini
+                    document.getElementById('penghasilankenapajak11').value = 0;
+                    return;
+                } else {
 
-            var data2 = document.getElementById("penghasilankenapajak11").value;
+                    var data2 = document.getElementById("penghasilankenapajak11").value;
 
-            // PERHITUNGAN SENDIRI
-            var PPhTerutang = document.getElementById("pphterutang12");
-            PPhTerutang.disabled = PerhitunganSendiri.checked ? false : true;
-            console.log(countPajakProgresif(data2))
-            if (!PerhitunganSendiri.checked) {
-                document.getElementById("pphterutang12").value = numeral(countPajakProgresif(data2)).format();
-                PPhTerutang.focus()
+                    // PERHITUNGAN SENDIRI
+                    var PPhTerutang = document.getElementById("pphterutang12");
+                    PPhTerutang.disabled = PerhitunganSendiri.checked ? false : true;
+                    console.log(countPajakProgresif(data2))
+                    if (!PerhitunganSendiri.checked) {
+                        document.getElementById("pphterutang12").value = numeral(countPajakProgresif(data2)).format();
+                        PPhTerutang.focus()
+                    }
+
+                    valuePPhTerutang12 = numeral(pphterutang12.value);
+                    document.getElementById('pphterutang12').value = valuePPhTerutang12.format();
+
+                    valuePPhTerutang13 = numeral(pphterutang13.value);
+                    document.getElementById('pphterutang13').value = valuePPhTerutang13.format();
+
+                    // HASIL 12+13
+                    var hasilpphterutang = ((valuePPhTerutang12.value()) + (valuePPhTerutang13.value()));
+                    document.getElementById('pphterutang14').value = numeral(hasilpphterutang).format();
+
+                    valueKreditPajak15 = numeral(kreditpajak15.value);
+                    document.getElementById('kreditpajak15').value = valueKreditPajak15.format();
+
+                    // KREDIT PAJAK 14-15
+                    var hasilkreditpajak = hasilpphterutang - (valueKreditPajak15.value());
+                    document.getElementById('kreditpajak16').value = numeral(hasilkreditpajak).format();
+
+                    valueKreditPajak17a = numeral(kreditpajak17a.value);
+                    document.getElementById('kreditpajak17a').value = valueKreditPajak17a.format();
+
+                    valueKreditPajak17b = numeral(kreditpajak17b.value);
+                    document.getElementById('kreditpajak17b').value = valueKreditPajak17b.format();
+
+                    // HASIL 17a+17b
+                    var hasilkreditpajak18 = ((valueKreditPajak17a.value()) + (valueKreditPajak17b.value()));
+                    // console.log(parseInt(valueKreditPajak15.format().replaceAll(',','')))
+                    if ((parseInt(numeral(hasilpphterutang).format().replaceAll(',', '')) -
+                            parseInt(valueKreditPajak15.format().replaceAll(',', ''))) < 0) {
+                        $("#pphPotongPungut").prop("checked", true);
+
+                    }
+                    document.getElementById('kreditpajak18').value = numeral(hasilkreditpajak18).format();
+                    if (hasilkreditpajak < 0) {
+                        $("#pphPotongPungut").prop("checked", true);
+                    } else {
+                        $("#pphBayarSendiri").prop("checked", true);
+
+                    }
+                    if ($('input[name="Nomor16"]:checked').val() == 'bayarsendiri' && hasilkreditpajak >= hasilkreditpajak18) {
+                        $("#KurangBayar").prop("checked", true);
+                    } else if ($('input[name="Nomor16"]:checked').val() == 'bayarsendiri' && hasilkreditpajak < hasilkreditpajak18) {
+                        $("#LebihBayar").prop("checked", true);
+
+                    } else if ($('input[name="Nomor16"]:checked').val() == 'potongpungut') {
+                        $("#LebihBayar").prop("checked", true);
+
+                    }
+                    // PPh KURANG/LEBIH BAYAR
+                    var pphkuranglebih19 = hasilkreditpajak - hasilkreditpajak18;
+                    if (pphkuranglebih19 >= 0) {
+                        document.getElementById('KurangLebihBayar19').value = numeral(pphkuranglebih19).format();
+                    } else {
+                        pphkuranglebih19 = hasilkreditpajak18 - hasilkreditpajak;
+                        document.getElementById('KurangLebihBayar19').value = numeral(pphkuranglebih19).format();
+                    }
+
+                    // PASAL 25
+                    valuePasal25 = numeral(pasal25.value);
+                    document.getElementById('pasal25').value = valuePasal25.format();
+                }
             }
-
-            valuePPhTerutang12 = numeral(pphterutang12.value);
-            document.getElementById('pphterutang12').value = valuePPhTerutang12.format();
-
-            valuePPhTerutang13 = numeral(pphterutang13.value);
-            document.getElementById('pphterutang13').value = valuePPhTerutang13.format();
-
-            // HASIL 12+13
-            var hasilpphterutang = ((valuePPhTerutang12.value()) + (valuePPhTerutang13.value()));
-            document.getElementById('pphterutang14').value = numeral(hasilpphterutang).format();
-
-            valueKreditPajak15 = numeral(kreditpajak15.value);
-            document.getElementById('kreditpajak15').value = valueKreditPajak15.format();
-
-            // KREDIT PAJAK 14-15
-            var hasilkreditpajak = hasilpphterutang - (valueKreditPajak15.value());
-            document.getElementById('kreditpajak16').value = numeral(hasilkreditpajak).format();
-
-            valueKreditPajak17a = numeral(kreditpajak17a.value);
-            document.getElementById('kreditpajak17a').value = valueKreditPajak17a.format();
-
-            valueKreditPajak17b = numeral(kreditpajak17b.value);
-            document.getElementById('kreditpajak17b').value = valueKreditPajak17b.format();
-
-            // HASIL 17a+17b
-            var hasilkreditpajak18 = ((valueKreditPajak17a.value()) + (valueKreditPajak17b.value()));
-            document.getElementById('kreditpajak18').value = numeral(hasilkreditpajak18).format();
-            if ($('input[name="Nomor16"]:checked').val() == 'bayarsendiri' && hasilkreditpajak >= hasilkreditpajak18) {
-                $("#KurangBayar").prop("checked", true);
-            } else if ($('input[name="Nomor16"]:checked').val() == 'bayarsendiri' && hasilkreditpajak < hasilkreditpajak18) {
-                $("#LebihBayar").prop("checked", true);
-
-            } else if ($('input[name="Nomor16"]:checked').val() == 'potongpungut') {
-                $("#LebihBayar").prop("checked", true);
-
-            }
-            // PPh KURANG/LEBIH BAYAR
-            var pphkuranglebih19 = hasilkreditpajak - hasilkreditpajak18;
-            document.getElementById('KurangLebihBayar19').value = numeral(pphkuranglebih19).format();
-
-            // PASAL 25
-            valuePasal25 = numeral(pasal25.value);
-            document.getElementById('pasal25').value = valuePasal25.format();
-        }
 
         function countPajakProgresif(pkpr) {
             pkp = Number(pkpr.replace(/,/g, ''));

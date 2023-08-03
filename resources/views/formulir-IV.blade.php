@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 
     <title>Formulir 1770-IV</title>
 </head>
@@ -752,76 +752,6 @@
         }
 
         countdata = <?= count($data_harta) ?>;
-
-        // function deleteTableHarta(nama) {
-        //     if (countdata == 0) {
-        //         Swal.fire({
-        //             icon: 'error',
-        //             title: '',
-        //             text: 'Mohon Melengkapi Row Sebelumnya',
-        //         })
-        //         return;
-        //     }
-        //     Swal.fire({
-        //         title: 'Apa kamu yakin?',
-        //         text: "Kamu tidak akan dapat mengembalikan ini!",
-        //         icon: 'warning',
-        //         showCancelButton: true,
-        //         confirmButtonColor: '#3085d6',
-        //         cancelButtonColor: '#d33',
-        //         confirmButtonText: 'Ya, hapus!',
-        //         cancelButtonText: 'Batal',
-        //     }).then((result) => {
-        //         if (result.isConfirmed) {
-        //             Swal.fire(
-        //                 'Berhasil!',
-        //                 'Data Anda telah dihapus.',
-        //                 'success'
-        //             )
-
-        //             let tr_length = $('#' + nama + ' tr').length;
-        //             if (tr_length == 2) {
-        //                 $.ajax({
-        //                     headers: {
-        //                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //                     },
-        //                     type: "POST",
-        //                     url: '/DataHarta/delete',
-        //                     success: function(res) {
-        //                         $('#' + nama + ' tr:last').remove();
-        //                         var countdatas = <?= count($data_harta) ?>,
-        //                             template = document.querySelector('#rowTemplateHarta'),
-        //                             tbl = document.querySelector('#A_TblHarta'),
-        //                             td_choice = template.content.querySelectorAll("td"),
-        //                             last_td = $('#A_TblHarta tr:last'),
-        //                             tr_count = tbl.rows.length;
-        //                         td_choice.textContent = tr_count;
-        //                         var clone = document.importNode(template.content, true);
-        //                         tbl.appendChild(clone);
-        //                         format();
-        //                     }
-        //                 });
-        //             }
-        //             if (tr_length > 2) {
-        //                 $.ajax({
-        //                     headers: {
-        //                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //                     },
-        //                     type: "POST",
-        //                     url: '/DataHarta/delete',
-        //                     success: function(res) {
-        //                         $('#' + nama + ' tr:last').remove();
-        //                         format();
-        //                     }
-        //                 });
-        //             }
-        //             counted -= 1;
-        //             countdata -= 1;
-        //             format();
-        //         }
-        //     })
-
-        // }
 
         function hapusData() {
             var checkboxes = document.getElementsByName("dataharta_id");

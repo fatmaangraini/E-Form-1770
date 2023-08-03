@@ -60,7 +60,7 @@ class AuthController extends Controller
             if (Auth::attempt($credentials)) {
                 //    dd(auth()->user()->email);
                 return redirect()->intended('arsipSPT')
-                    ->withSuccess('Signed in');
+                    ;
             }
         } else {
             $data = [
@@ -76,8 +76,8 @@ class AuthController extends Controller
             $check = $this->create($data);
             if (Auth::attempt($credentials)) {
                 //    dd(auth()->user()->email);
-                return redirect()->intended('arsipSPT')
-                    ->withSuccess('Signed in');
+                return redirect()->intended('arsipSPT');
+                   
             }
         }
 

@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 
     <title>Formulir 1770-III</title>
 
@@ -241,177 +241,8 @@
                 <td style="background-color: #F0E68C;"><input type="text" class="form-control" readonly="readonly" style="background-color: #F0E68C; text-align: right" name="hasil" id="hasil"></td>
             </tr>
         </table>
-        <script>
-            function BagianA(event) {
-                pengenaan_pajak1 = document.querySelector('#pengenaan_pajak1').value
-                pengenaan_pajak2 = document.querySelector('#pengenaan_pajak2').value
-                pengenaan_pajak3 = document.querySelector('#pengenaan_pajak3').value
-                pengenaan_pajak4 = document.querySelector('#pengenaan_pajak4').value
-                pengenaan_pajak5 = document.querySelector('#pengenaan_pajak5').value
-                pengenaan_pajak6 = document.querySelector('#pengenaan_pajak6').value
-                pengenaan_pajak7 = document.querySelector('#pengenaan_pajak7').value
-                pengenaan_pajak8 = document.querySelector('#pengenaan_pajak8').value
-                pengenaan_pajak9 = document.querySelector('#pengenaan_pajak9').value
-                pengenaan_pajak10 = document.querySelector('#pengenaan_pajak10').value
-                pengenaan_pajak11 = document.querySelector('#pengenaan_pajak11').value
-                pengenaan_pajak12 = document.querySelector('#pengenaan_pajak12').value
-                pengenaan_pajak14 = document.querySelector('#pengenaan_pajak14').value
-                pengenaan_pajak15 = document.querySelector('#pengenaan_pajak15').value
-                pengenaan_pajak16 = document.querySelector('#pengenaan_pajak16').value
-                pph_terutang1 = document.querySelector('#pph_terutang1').value
-                pph_terutang2 = document.querySelector('#pph_terutang2').value
-                pph_terutang3 = document.querySelector('#pph_terutang3').value
-                pph_terutang4 = document.querySelector('#pph_terutang4').value
-                pph_terutang5 = document.querySelector('#pph_terutang5').value
-                pph_terutang6 = document.querySelector('#pph_terutang6').value
-                pph_terutang7 = document.querySelector('#pph_terutang7').value
-                pph_terutang8 = document.querySelector('#pph_terutang8').value
-                pph_terutang9 = document.querySelector('#pph_terutang9').value
-                pph_terutang10 = document.querySelector('#pph_terutang10').value
-                pph_terutang11 = document.querySelector('#pph_terutang11').value
-                pph_terutang12 = document.querySelector('#pph_terutang12').value
-                pph_terutang14 = document.querySelector('#pph_terutang14').value
-                pph_terutang15 = document.querySelector('#pph_terutang15').value
-                pph_terutang16 = document.querySelector('#pph_terutang16').value
 
-                var data = {
-                    type: event.value,
-                    pengenaan: [pengenaan_pajak1, pengenaan_pajak2, pengenaan_pajak3, pengenaan_pajak4, pengenaan_pajak5, pengenaan_pajak6,
-                        pengenaan_pajak7, pengenaan_pajak8, pengenaan_pajak9, pengenaan_pajak10, pengenaan_pajak11, pengenaan_pajak12,
-                        pengenaan_pajak14, pengenaan_pajak15, pengenaan_pajak16
-                    ],
-                    pphterutang: [pph_terutang1, pph_terutang2, pph_terutang3, pph_terutang4, pph_terutang5, pph_terutang6, pph_terutang7,
-                        pph_terutang8, pph_terutang9, pph_terutang10, pph_terutang11, pph_terutang12, pph_terutang14, pph_terutang15, pph_terutang16
-                    ]
-                }
-                console.log(data);
-                $.ajax({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    type: "POST",
-                    url: '/FormulirIIIA_Point/Store/{{ $form3 }}',
-                    data: data,
-                    success: function(res) {
-                        Swal.fire({
-                                title: 'Data Berhasil Tersimpan',
-                                icon: 'success',
-                                confirmButtonColor: '#8A2BE2',
-                                confirmButtonText: 'OK',
-                            }
-
-                        ).then((result) => {
-                            if (result.isConfirmed) {
-
-                                location.reload();
-                            }
-                        })
-                    }
-                });
-
-
-            }
-
-            // function cekBagianA() {
-            //     pengenaan_pajak1 = document.querySelector('#pengenaan_pajak1').value
-            //     pengenaan_pajak2 = document.querySelector('#pengenaan_pajak2').value
-            //     pengenaan_pajak3 = document.querySelector('#pengenaan_pajak3').value
-            //     pengenaan_pajak4 = document.querySelector('#pengenaan_pajak4').value
-            //     pengenaan_pajak5 = document.querySelector('#pengenaan_pajak5').value
-            //     pengenaan_pajak6 = document.querySelector('#pengenaan_pajak6').value
-            //     pengenaan_pajak7 = document.querySelector('#pengenaan_pajak7').value
-            //     pengenaan_pajak8 = document.querySelector('#pengenaan_pajak8').value
-            //     pengenaan_pajak9 = document.querySelector('#pengenaan_pajak9').value
-            //     pengenaan_pajak10 = document.querySelector('#pengenaan_pajak10').value
-            //     pengenaan_pajak11 = document.querySelector('#pengenaan_pajak11').value
-            //     pengenaan_pajak12 = document.querySelector('#pengenaan_pajak12').value
-            //     pengenaan_pajak14 = document.querySelector('#pengenaan_pajak14').value
-            //     pengenaan_pajak15 = document.querySelector('#pengenaan_pajak15').value
-            //     pengenaan_pajak16 = document.querySelector('#pengenaan_pajak16').value
-            //     pph_terutang1 = document.querySelector('#pph_terutang1').value
-            //     pph_terutang2 = document.querySelector('#pph_terutang2').value
-            //     pph_terutang3 = document.querySelector('#pph_terutang3').value
-            //     pph_terutang4 = document.querySelector('#pph_terutang4').value
-            //     pph_terutang5 = document.querySelector('#pph_terutang5').value
-            //     pph_terutang6 = document.querySelector('#pph_terutang6').value
-            //     pph_terutang7 = document.querySelector('#pph_terutang7').value
-            //     pph_terutang8 = document.querySelector('#pph_terutang8').value
-            //     pph_terutang9 = document.querySelector('#pph_terutang9').value
-            //     pph_terutang10 = document.querySelector('#pph_terutang10').value
-            //     pph_terutang11 = document.querySelector('#pph_terutang11').value
-            //     pph_terutang12 = document.querySelector('#pph_terutang12').value
-            //     pph_terutang14 = document.querySelector('#pph_terutang14').value
-            //     pph_terutang15 = document.querySelector('#pph_terutang15').value
-            //     pph_terutang16 = document.querySelector('#pph_terutang16').value
-
-            //     console.log(pengenaan_pajak1)
-            //     if (pengenaan_pajak1 < 1 || pph_terutang1 < 1) {
-            //         Swal.fire({
-            //             icon: 'error',
-            //             title: 'Oops...',
-            //             text: 'Isi dulu datanya!',
-            //         })
-            //         return
-            //     }
-            //     var data = {
-            //         type: event.value,
-            //         pengenaan: [pengenaan_pajak1, pengenaan_pajak2, pengenaan_pajak3, pengenaan_pajak4, pengenaan_pajak5, pengenaan_pajak6,
-            //             pengenaan_pajak7, pengenaan_pajak8, pengenaan_pajak9, pengenaan_pajak10, pengenaan_pajak11, pengenaan_pajak12,
-            //             pengenaan_pajak14, pengenaan_pajak15, pengenaan_pajak16
-            //         ],
-            //         pphterutang: [pph_terutang1, pph_terutang2, pph_terutang3, pph_terutang4, pph_terutang5, pph_terutang6, pph_terutang7,
-            //             pph_terutang8, pph_terutang9, pph_terutang10, pph_terutang11, pph_terutang12, pph_terutang14, pph_terutang15, pph_terutang16
-            //         ]
-            //     }
-
-            //     const myElement = document.getElementById("simpanbagianA").click();
-
-            // }
-
-            function BagianADelete(nama) {
-                $.ajax({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    type: "POST",
-                    url: '/FormulirIIIA_Point/delete/{{ $form3 }}',
-                    success: function(res) {
-                        Swal.fire({
-                                title: 'Apa kamu yakin?',
-                                text: "Kamu tidak akan dapat mengembalikan ini!",
-                                icon: 'warning',
-                                showCancelButton: true,
-                                confirmButtonColor: '#3085d6',
-                                cancelButtonColor: '#d33',
-                                confirmButtonText: 'Ya, hapus!',
-                                cancelButtonText: 'Batal',
-                            }
-
-                        ).then((result) => {
-                            if (result.isConfirmed) {
-                                Swal.fire({
-                                        title: 'Berhasil',
-                                        icon: 'success',
-                                        confirmButtonColor: '#8A2BE2',
-                                        confirmButtonText: 'OK',
-                                    }
-
-                                ).then((result) => {
-                                    if (result.isConfirmed) {
-
-                                        location.reload();
-                                    }
-                                })
-
-                            }
-                        })
-                    }
-                });
-            }
-        </script>
-        <!-- <button type="button"  value="save" onclick="BagianA(this)">Simpan</button> -->
         <button type="button" value="edit" id="simpanbagianA" onclick="BagianA(this)">Simpan</button>
-        <!-- <button type="button" onclick="cekBagianA(this)">Simpan</button> -->
         <button type="button" onclick="BagianADelete()">Hapus</button>
 
         <!-- Bagian B. Tidak Objek Pajak -->
@@ -468,75 +299,6 @@
             </tr>
         </table>
 
-        <script>
-            function BagianB() {
-                bantuansumbanganhibah = document.querySelector('#bantuansumbanganhibah').value
-                warisan = document.querySelector('#warisan').value
-                bagianlaba = document.querySelector('#bagianlaba').value
-                klaimasuransi = document.querySelector('#klaimasuransi').value
-                beasiswa = document.querySelector('#beasiswa').value
-                penghasilanlain = document.querySelector('#penghasilanlain').value
-
-                var data = {
-                    bantuansumbanganhibah: [bantuansumbanganhibah, warisan, bagianlaba, klaimasuransi, beasiswa, penghasilanlain],
-                }
-
-                console.log(data);
-                $.ajax({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    type: "POST",
-                    url: '/FormulirIIIB_Point/Store/{{ $form3 }}',
-                    data: data,
-                    success: function(res) {
-                        Swal.fire(
-                            'Data Berhasil Tersimpan',
-                            '',
-                            'success'
-                        )
-                        // location.reload()
-                    }
-                });
-
-            }
-
-            function BagianBDelete(nama) {
-                $.ajax({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    type: "POST",
-                    url: '/FormulirIIIB_Point/delete/{{ $form3 }}',
-                    success: function(res) {
-                        Swal.fire({
-                                title: 'Apa kamu yakin?',
-                                text: "Kamu tidak akan dapat mengembalikan ini!",
-                                icon: 'warning',
-                                showCancelButton: true,
-                                confirmButtonColor: '#3085d6',
-                                cancelButtonColor: '#d33',
-                                confirmButtonText: 'Ya, hapus!',
-                                cancelButtonText: 'Batal',
-                            }
-
-                        ).then((result) => {
-                            if (result.isConfirmed) {
-                                Swal.fire(
-                                    'Berhasil!',
-                                    'Data Anda telah dihapus.',
-                                    'success'
-                                )
-                                location.reload()
-
-                            }
-                        })
-                    }
-                });
-
-            }
-        </script>
-        <!-- <button type="button" onclick="BagianB(this)">Simpan</button> -->
         <button type="button" value="edit" onclick="BagianB(this)">Simpan</button>
         <button type="button" onclick="BagianBDelete('A_TblHarta')">Hapus</button>
 
@@ -544,85 +306,20 @@
         <table id="mytable" class="display" style="width:100%">
             <tr>
                 <td width="54%" class="left">PENGHASILAN NETO ISTERI/SUAMI YANG DIKENAKAN PAJAK SECARA TERPISAH</td>
-                <td ><input value="{{ $formulir_iiic[0]->rupiah_dsrPengenaan_PajakC ?? '' }}" class="text" placeholder="0" oninput="format2(this.value)" name="pajak_terpisah" id="pajak_terpisah">
+                <td><input value="{{ $formulir_iiic[0]->rupiah_dsrPengenaan_PajakC ?? '' }}" class="form-control" placeholder="0" oninput="format2(this.value)" name="pajak_terpisah" id="pajak_terpisah">
                 </td>
             </tr>
         </table>
-        <!-- <button type="button" onclick="BagianC(this)">Simpan</button> -->
+
         <button type="button" value="edit" onclick="BagianC(this)">Simpan</button>
         <button type="button" onclick="BagianCDelete('A_TblHarta')">Hapus</button>
         </form>
-
-        <script>
-            function BagianC() {
-                pajak_terpisah = document.querySelector('#pajak_terpisah').value
-
-                var data = {
-                    pajak_terpisah: pajak_terpisah,
-                }
-
-                console.log(data);
-                $.ajax({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    type: "POST",
-                    url: '/FormulirIIIC_Point/Store/{{ $form3 }}',
-                    data: data,
-                    success: function(res) {
-                        Swal.fire(
-                            'Data Berhasil Tersimpan',
-                            '',
-                            'success'
-                        )
-                    }
-                });
-            }
-
-            function BagianCDelete(nama) {
-                $.ajax({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    type: "POST",
-                    url: '/FormulirIIIC_Point/delete/{{ $form3 }}',
-                    success: function(res) {
-                        Swal.fire({
-                                title: 'Apa kamu yakin?',
-                                text: "Kamu tidak akan dapat mengembalikan ini!",
-                                icon: 'warning',
-                                showCancelButton: true,
-                                confirmButtonColor: '#3085d6',
-                                cancelButtonColor: '#d33',
-                                confirmButtonText: 'Ya, hapus!',
-                                cancelButtonText: 'Batal',
-                            }
-
-                        ).then((result) => {
-                            if (result.isConfirmed) {
-                                Swal.fire(
-                                    'Berhasil!',
-                                    'Data Anda telah dihapus.',
-                                    'success'
-                                )
-                                location.reload()
-
-                            }
-                        })
-                    }
-                });
-
-            }
-        </script>
-
 
     </div>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-
     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
-
 
     <script>
         $(document).ready(function() {
@@ -1146,7 +843,245 @@
             formatnpwp2.value = formatnpwp.replace(/(\d{2})(\d{3})(\d{3})(\d{1})(\d{3})(\d{3})/, '$1.$2.$3.$4-$5.$6');
         }
     </script>
+    <script>
+        function BagianA(event) {
+            pengenaan_pajak1 = document.querySelector('#pengenaan_pajak1').value
+            pengenaan_pajak2 = document.querySelector('#pengenaan_pajak2').value
+            pengenaan_pajak3 = document.querySelector('#pengenaan_pajak3').value
+            pengenaan_pajak4 = document.querySelector('#pengenaan_pajak4').value
+            pengenaan_pajak5 = document.querySelector('#pengenaan_pajak5').value
+            pengenaan_pajak6 = document.querySelector('#pengenaan_pajak6').value
+            pengenaan_pajak7 = document.querySelector('#pengenaan_pajak7').value
+            pengenaan_pajak8 = document.querySelector('#pengenaan_pajak8').value
+            pengenaan_pajak9 = document.querySelector('#pengenaan_pajak9').value
+            pengenaan_pajak10 = document.querySelector('#pengenaan_pajak10').value
+            pengenaan_pajak11 = document.querySelector('#pengenaan_pajak11').value
+            pengenaan_pajak12 = document.querySelector('#pengenaan_pajak12').value
+            pengenaan_pajak14 = document.querySelector('#pengenaan_pajak14').value
+            pengenaan_pajak15 = document.querySelector('#pengenaan_pajak15').value
+            pengenaan_pajak16 = document.querySelector('#pengenaan_pajak16').value
+            pph_terutang1 = document.querySelector('#pph_terutang1').value
+            pph_terutang2 = document.querySelector('#pph_terutang2').value
+            pph_terutang3 = document.querySelector('#pph_terutang3').value
+            pph_terutang4 = document.querySelector('#pph_terutang4').value
+            pph_terutang5 = document.querySelector('#pph_terutang5').value
+            pph_terutang6 = document.querySelector('#pph_terutang6').value
+            pph_terutang7 = document.querySelector('#pph_terutang7').value
+            pph_terutang8 = document.querySelector('#pph_terutang8').value
+            pph_terutang9 = document.querySelector('#pph_terutang9').value
+            pph_terutang10 = document.querySelector('#pph_terutang10').value
+            pph_terutang11 = document.querySelector('#pph_terutang11').value
+            pph_terutang12 = document.querySelector('#pph_terutang12').value
+            pph_terutang14 = document.querySelector('#pph_terutang14').value
+            pph_terutang15 = document.querySelector('#pph_terutang15').value
+            pph_terutang16 = document.querySelector('#pph_terutang16').value
 
+            var data = {
+                type: event.value,
+                pengenaan: [pengenaan_pajak1, pengenaan_pajak2, pengenaan_pajak3, pengenaan_pajak4, pengenaan_pajak5, pengenaan_pajak6,
+                    pengenaan_pajak7, pengenaan_pajak8, pengenaan_pajak9, pengenaan_pajak10, pengenaan_pajak11, pengenaan_pajak12,
+                    pengenaan_pajak14, pengenaan_pajak15, pengenaan_pajak16
+                ],
+                pphterutang: [pph_terutang1, pph_terutang2, pph_terutang3, pph_terutang4, pph_terutang5, pph_terutang6, pph_terutang7,
+                    pph_terutang8, pph_terutang9, pph_terutang10, pph_terutang11, pph_terutang12, pph_terutang14, pph_terutang15, pph_terutang16
+                ]
+            }
+            console.log(data);
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: "POST",
+                url: '/FormulirIIIA_Point/Store/{{ $form3 }}',
+                data: data,
+                success: function(res) {
+                    Swal.fire({
+                            title: 'Data Berhasil Tersimpan',
+                            icon: 'success',
+                            confirmButtonColor: '#8A2BE2',
+                            confirmButtonText: 'OK',
+                        }
+
+                    ).then((result) => {
+                        if (result.isConfirmed) {
+
+                            location.reload();
+                        }
+                    })
+                }
+            });
+
+
+        }
+
+        function BagianADelete(nama) {
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: "POST",
+                url: '/FormulirIIIA_Point/delete/{{ $form3 }}',
+                success: function(res) {
+                    Swal.fire({
+                            title: 'Apa kamu yakin?',
+                            text: "Kamu tidak akan dapat mengembalikan ini!",
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Ya, hapus!',
+                            cancelButtonText: 'Batal',
+                        }
+
+                    ).then((result) => {
+                        if (result.isConfirmed) {
+                            Swal.fire({
+                                    title: 'Berhasil',
+                                    icon: 'success',
+                                    confirmButtonColor: '#8A2BE2',
+                                    confirmButtonText: 'OK',
+                                }
+
+                            ).then((result) => {
+                                if (result.isConfirmed) {
+
+                                    location.reload();
+                                }
+                            })
+
+                        }
+                    })
+                }
+            });
+        }
+
+        function BagianB() {
+            bantuansumbanganhibah = document.querySelector('#bantuansumbanganhibah').value
+            warisan = document.querySelector('#warisan').value
+            bagianlaba = document.querySelector('#bagianlaba').value
+            klaimasuransi = document.querySelector('#klaimasuransi').value
+            beasiswa = document.querySelector('#beasiswa').value
+            penghasilanlain = document.querySelector('#penghasilanlain').value
+
+            var data = {
+                bantuansumbanganhibah: [bantuansumbanganhibah, warisan, bagianlaba, klaimasuransi, beasiswa, penghasilanlain],
+            }
+
+            console.log(data);
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: "POST",
+                url: '/FormulirIIIB_Point/Store/{{ $form3 }}',
+                data: data,
+                success: function(res) {
+                    Swal.fire(
+                        'Data Berhasil Tersimpan',
+                        '',
+                        'success'
+                    )
+                    // location.reload()
+                }
+            });
+
+        }
+
+        function BagianBDelete(nama) {
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: "POST",
+                url: '/FormulirIIIB_Point/delete/{{ $form3 }}',
+                success: function(res) {
+                    Swal.fire({
+                            title: 'Apa kamu yakin?',
+                            text: "Kamu tidak akan dapat mengembalikan ini!",
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Ya, hapus!',
+                            cancelButtonText: 'Batal',
+                        }
+
+                    ).then((result) => {
+                        if (result.isConfirmed) {
+                            Swal.fire(
+                                'Berhasil!',
+                                'Data Anda telah dihapus.',
+                                'success'
+                            )
+                            location.reload()
+
+                        }
+                    })
+                }
+            });
+
+        }
+
+        function BagianC() {
+            pajak_terpisah = document.querySelector('#pajak_terpisah').value
+
+            var data = {
+                pajak_terpisah: pajak_terpisah,
+            }
+
+            console.log(data);
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: "POST",
+                url: '/FormulirIIIC_Point/Store/{{ $form3 }}',
+                data: data,
+                success: function(res) {
+                    Swal.fire(
+                        'Data Berhasil Tersimpan',
+                        '',
+                        'success'
+                    )
+                }
+            });
+        }
+
+        function BagianCDelete(nama) {
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: "POST",
+                url: '/FormulirIIIC_Point/delete/{{ $form3 }}',
+                success: function(res) {
+                    Swal.fire({
+                            title: 'Apa kamu yakin?',
+                            text: "Kamu tidak akan dapat mengembalikan ini!",
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Ya, hapus!',
+                            cancelButtonText: 'Batal',
+                        }
+
+                    ).then((result) => {
+                        if (result.isConfirmed) {
+                            Swal.fire(
+                                'Berhasil!',
+                                'Data Anda telah dihapus.',
+                                'success'
+                            )
+                            location.reload()
+
+                        }
+                    })
+                }
+            });
+
+        }
+    </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

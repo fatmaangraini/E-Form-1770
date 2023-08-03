@@ -67,7 +67,7 @@ class FormController extends Controller
         $audit = Audit::where('formuliri_id', $form1->id ?? null)->get();
         $formuliri = FormulirI_Detail::where('formuliri_id', $form1->id ?? null)->get();
 
-        $form1_2 = FormulirI2::latest()->first();
+        $form1_2 = FormulirI2::where('form_spts_id', $spt->id ?? null)->first();
         $formulir_i2b = FormulirI2B_Detail::where('formuliri2_id', $form1_2->id)->get();
         $formulir_i2d = FormulirI2D_Detail::where('formuliri2_id', $form1_2->id)->get();
         $formulir_i2c = FormulirI2C::where('formuliri2_id', $form1_2->id)->get();
@@ -142,7 +142,7 @@ class FormController extends Controller
             'form1770' => $form1770->id,
             'form1770s' => $form1770,
             'kolom5' => $totalkolom5,
-            'formulir_i2d' => $totalform12d,
+            'totalformulir_i2d' => $totalform12d,
             'kolom_identitas' => $kolom_identitas,
             'formulir_1770' => $formulir_1770,
 
@@ -755,7 +755,7 @@ class FormController extends Controller
                 $form->media_pengiriman_token = $data['media_pengiriman_token'];
                 $form->cek_submit = 0;
                 $form->save();
-                FormController::composeEmail($request, auth()->user()->email, $form->id);
+                FormController::composeEmail($request,$request->email , $form->id);
 
                 return redirect('arsipSPT');
             } else {
